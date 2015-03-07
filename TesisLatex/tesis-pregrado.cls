@@ -21,8 +21,7 @@
 \DeclareOption{propuesta}{\propuestatrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-\LoadClass[oneside,12pt,a4paper,fullpage]{book}
-
+\LoadClass[oneside,12pt,letterpaper,fullpage]{book}
 %%   Modificado desde `book.cls'.
 %%
 %%   Modificado para que 
@@ -51,6 +50,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{float}
 %--------Simbolos y fuentes
+\RequirePackage{anysize}
 \RequirePackage{amstext}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amsfonts}
@@ -75,6 +75,7 @@
 \RequirePackage{epic,eepic} % para imagenes
 \RequirePackage{subfigure}
 %\RequirePackage{color}
+\RequirePackage[table,xcdraw]{xcolor}
 %-------Referencias
 \RequirePackage{hyperref}
 \RequirePackage{url} %citacion de URL
@@ -270,7 +271,7 @@
 \addto\captionsspanish
 {
 	\def\bibname{Referencias}
-	\def\contentsname{\'Indice de Contenidos}
+	\def\contentsname{Tabla de Contenidos}
 	\def\listfigurename{\'Indice de Figuras}
 	\def\listtablename{\'Indice de Tablas}
 	\def\listalgorithmname{\'Indice de Algoritmos}
@@ -322,10 +323,10 @@
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
 
 %--------Margenes segun reglamento: izq=inf=3cm y sup=der=2cm
-\RequirePackage[a4paper,nohead,nofoot]{geometry}
+\RequirePackage[letterpaper,nohead,nofoot]{geometry}
 % Estos margenes estan considerando la diferencia entre
 % los formatos A4 y Letter (carta)
-\geometry{top=1.77cm, bottom=3.67cm, left=2.15cm, right=0.92cm}
+\geometry{top=2cm, bottom=3cm, left=4cm, right=2.5cm}
 %--------Otros margenes
 \setlength{\parindent}{2cm}%2cm Tabulación
 \setlength{\headsep}{20pt}
@@ -418,10 +419,11 @@
 \newcommand{\makecubierta}
 {
 \begin{phv}
+\enlargethispage{1cm}
 \iflogo
 	\vspace*{-0.5cm}
 	\begin{picture}(18,4)(0,40)
-		\put(380,-7){\includegraphics[scale=.25]{./images/LogoUsach.pdf}}
+		\put(320,-7){\includegraphics[scale=.25]{./images/LogoUsach.pdf}}
 	\end{picture}
 \fi
 
@@ -436,7 +438,7 @@
 \end{center}
 
 \ifpropuesta % si se trata de la propuesta
-	\vspace*{5cm}
+	\vspace*{3cm}
 	\@titleMay\par
 	\vspace{1cm}
 	\begin{center}
@@ -470,10 +472,10 @@
 		\@diasemana, \@diaexamen\ de \@mesexamen\ de \@annoexamen
 	\end{center}
 \else % si se trata del documento final
-	\vspace*{4.5cm}
+	\vspace*{3cm}
 	\@titleMay\par
-	\vspace{1cm}
-	{
+	\vspace{0.5cm}
+	
 		\large
 		
 		\begin{center}
@@ -488,32 +490,32 @@
 		\vspace*{1.6cm}
 		\begin{flushleft}
 		\normalsize
-		\hspace{9cm} Profesor gu\'ia: {\@profesorguia}\\
+		\hspace{8cm} Profesor gu\'ia:\\ \hspace{8cm} {\@profesorguia}\\
 		\ifdosguias
-			\hspace{9cm} Profesor co-gu\'ia: {\@profesorcoguia}\\
+			\hspace{8cm} Profesor co-gu\'ia: \\\hspace{8cm} {\@profesorcoguia}\\
 		\fi
 		\vspace{1cm}
-		\hspace{9cm} Trabajo de titulac\'ion presentado\\
-		\hspace{9cm} en conformidad a los requisitos para\\
+		\hspace{8cm} Trabajo de titulaci\'on presentado\\
+		\hspace{8cm} en conformidad a los requisitos para\\
 		\ifcivil
-			\hspace{9cm} obtener el t\'itulo de Ingeniro Civil\\
-			\hspace{9cm} en  Inform\'atica\\
+			\hspace{8cm} obtener el t\'itulo de Ingeniero Civil\\
+			\hspace{8cm} en  Inform\'atica\\
 		\fi
 		\ifejecucion
-			\hspace{9cm} OBTENER EL T\'ITULO DE INGENIERO DE \\
-			\hspace{9cm} EJECUCI\'ON EN COMPUTACI\'ON E INFORM\'ATICA\\
+			\hspace{8cm} OBTENER EL T\'ITULO DE INGENIERO DE \\
+			\hspace{8cm} EJECUCI\'ON EN COMPUTACI\'ON E INFORM\'ATICA\\
 		\fi
 		
 		\end{flushleft}
 
-		\vspace*{3.5cm}
+		\vspace*{2.5cm}
 		\normalsize\MakeUppercase{\@ciudad\ -- \@pais}\\
 		\@annoexamen
 		
 		\end{center}\par
 		\iflogo \vspace{.9cm} \else \vspace{1cm} \fi
 	    \end{phv}	
-	}
+	
 \fi
 } %\\end \makecubierta
 %-------Copyright

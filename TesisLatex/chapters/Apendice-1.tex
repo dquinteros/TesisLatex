@@ -5,13 +5,64 @@
 \chapter{Manual de Usuario}
 \label{cap:manual}
 
+En este anexo se encuentran las instrucciones de uso del software desarrollado, lo requerimientos mínimo y los pasos necesario para su instalación.
 
 \section{Requerimientos}
 
-blablablabla....
+Los requerimientos mínimos necesarios para la instalación y funcionamiento del software son.
+
+\begin{itemize}
+\item C++11 (g++ 4.8+)
+\item OpenCV 2.4.9
+\item Boost 1.54
+\item SO linux
+\item 4GB RAM
+\item Procesador intel COREi3 1.9GHz
+\item Espacio libre en disco superior a 5GB
+\end{itemize}
+
+Los requerimientos recomendados para un correcto funcionamiento son.
+
+\begin{itemize}
+\item C++11 (g++ 4.8+)
+\item OpenCV 2.4.9
+\item Boost 1.54
+\item Linux mint 17 / Ubuntu 14.04
+\item 8GB RAM
+\item Procesador intel COREi5 2.6Ghz
+\item Espacio libre en disco superior a 20GB
+\end{itemize}
+
 
 \section{Instalaci\'on}
 
-blablablabla....
+Para la instalación hay que copiar el contenido de la carpeta sscaThesis en el directorio donde se desea instalar y ejecutar el comando \textit{make}.
 
-blablablabla....
+Para el funcionamiento es necesario crear los archivos de lista con el path de las imágenes a utilizar la estructura para los archivos de lista es la siguiente donde la lista superior contiene las otras.
+
+\begin{itemize}
+\item Lista según uso (Entrenamiento positivo, Entrenamiento negativo, Pruebas).
+\subitem * Lista según tamaño de ventana.
+\subsubitem     - Lista de los path de las imágenes.
+\end{itemize}
+
+
+\section{Utilización}
+
+Para la ayuda en el programa utilizar el comando
+
+\begin{lstlisting}
+./main.o --help 
+\end{lstlisting}
+
+Para para realizar detección y normalización ejecutar el siguiente comando
+
+\begin{lstlisting}
+./main.o -p <Archivo lista ejemplos positivos> -n <Archivo lista ejemplos negativos> -t <Archivo lista ejemplos de prueba>  -c <Seleccion del clasificador, soportados svm & boost>
+\end{lstlisting}
+
+Para realizar la evaluación de sensibilidad espacial utilizar el si
+
+\begin{lstlisting}
+sh evaluate.sh <directorio con las matrices *.mat> <nombre del archivo de salida>
+\end{lstlisting}

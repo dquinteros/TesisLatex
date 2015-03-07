@@ -1,14 +1,22 @@
 
+
 \resumenCastellano{
-bla bla bla
+
+El problema de la detección de personas para el conjunto de datos INRIA es presentado como resuelto en un trabajo anterior por \cite{dalal2006}. Sin embargo, aún existen muchos sub problemas sin resolver. Uno de estos problemas es la caracterización de la ``sensibilidad'' espacial de un detector de personas, es decir que tan bien sintonizada es la detección, especialmente dentro un pequeña vecindad alrededor del peatón a ser detectado. Esta propiedad, permite simplificar el método \textit{non-maximal suppression} que normalmente es utilizado para eliminar detecciones múltiples. 
+Este trabajo de titulo estudia este problema en detalle, considerando una vecindad alrededor de cada peatón anotado en el conjunto de verdad, evaluando la respuesta de un clasificador y transformando esta respuesta en una probabilidad (ya que algunos clasificadores tienen por salida una distancia sin interpretación probabilística directa), lo que permite realizar comparaciones entre diferentes clasificadores y mejorar la visualización de los resultados.
+
 \vspace*{0.5cm}
-\KeywordsES{HOG;SVM}
+\KeywordsES{Sensibilidad espacial, HOG, SVM, Adaboost, Imágenes, Detección de peatones}
 }
 
 \newpage
 
 \resumenIngles{
-bla bla bla
+
+The people detection problem for the INRIA pedestrian data set is presented as solved in earlier work by \cite{dalal2006}, but still has many unsolved sub problems. One of these problems is the characterisation of the spatial ``sensitivity'' of the people detector \ie how sharp its detection is especially within a small neighbourhood around the pedestrians to be detected, a property that simplifies the non-maximal suppression method that is normally needed to eliminate multiple detections. 
+This work studies this problem in some detail by taking a neighbourhood around the ground truth and evaluating a classifier's response by converting such response into a probability (as some classifiers output a distance without a direct probabilistic interpretation) to allow comparisons between different classifiers and improve the results visualization.
+
 \vspace*{0.5cm}
-\KeywordsEN{HOG;SVM}
+\KeywordsEN{Spatial Sensitivity, HOG, SVM, Adaboost, Images, Pedestrian detection}
+
 }
