@@ -21,7 +21,7 @@
 \DeclareOption{propuesta}{\propuestatrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-\LoadClass[oneside,12pt,letterpaper,fullpage]{book}
+\LoadClass[twoside,12pt,letterpaper,fullpage]{book}
 %%   Modificado desde `book.cls'.
 %%
 %%   Modificado para que 
@@ -49,6 +49,7 @@
 \RequirePackage{fancybox}
 \RequirePackage{fancyhdr}
 \RequirePackage{float}
+\RequirePackage{emptypage}
 %--------Simbolos y fuentes
 \RequirePackage{anysize}
 \RequirePackage{amstext}

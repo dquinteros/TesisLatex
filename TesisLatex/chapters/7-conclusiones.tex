@@ -5,27 +5,27 @@
 \chapter{Conclusiones}
 \label{cap:conclusiones}
 
-En el presente capítulo se exponen las conclusiones en base a los resultados obtenidos en el desarrollo de este trabajo de título. Este capítulo quedará dividido en tres partes. La primera de la secciones contiene las conclusiones generadas a partir de los resultados obtenidos y el análisis comparativo realizado. En segundo lugar se analizará el cumplimiento de los objetivos planteado para la realización de este trabajo. Finalmente se concluirá considerando las posibilidades de mejora y trabajo futuro en la misma línea de investigación.
-
+En el presente capítulo se exponen las conclusiones sobre los resultados obtenidos en el desarrollo de este trabajo de título. Este capítulo quedará dividido en tres partes. La primera de la secciones contiene las conclusiones generadas a partir de los resultados obtenidos y el análisis comparativo realizado. En segundo lugar se analizará el cumplimiento de los objetivos planteado para la realización de este trabajo. Finalmente se concluirá considerando las posibilidades de mejora y trabajo futuro en la misma línea de investigación.
 
 \section{Conclusiones sobre los resultados}
 
-Los resultados obtenidos apuntan a dos aspectos principales de la investigación. En primer lugar un marco de trabajo para la evaluación de la sensibilidad espacial. En segundo lugar el desarrollo de una métrica válida para la evaluación de la misma. 
+Los resultados obtenidos apuntan a dos aspectos principales de la investigación. En primer lugar un marco de trabajo experimental para la evaluación de la sensibilidad espacial. En segundo lugar el desarrollo de una métrica válida para la evaluación de la misma. 
 
-Respecto del punto de vista del desarrollo del marco de trabajo, este se encuentra completo resultando funcional y útil para la tarea que fue diseñado. Sin embargo, es un diseño básico que requiere ser perfeccionado en un trabajo futuro que le permita principalmente incluir evaluaciones en diferentes aspectos de los clasificadores. Estos aspectos pueden ser métricas de rendimiento o desempeño, así como también de velocidad.  
+Por otra parte es importante revisar los resultados desde el punto de vista del desarrollo y evaluación de la métrica de sensibilidad espacial. Un ves realizado ANOVA es posible validar la hipótesis experimental planteada:
 
-Por otra parte algunas es importante revisar los resultados desde el punto de vista del desarrollo y evaluación de la métrica de sensibilidad espacial. La métrica PPD propuesta permite la medición de la sensibilidad espacial en cuanto a la vecindad de un objeto a detectar. Esto es un contexto bien delimitado que permite entregar mayor información sobre el problema de las detecciones múltiples. Con esta información es posible en trabajos futuros proponer alternativas a NMS como método de post procesamiento o bien refinar el método de acuerdo al problema particular que se esté analizando. Esto es una de los aportes mas relevantes. 
+``La métrica para la caracterización de la sensibilidad espacial en la vecindad del peatón permite la comparación de los resultados obtenidos en diferentes escalas por dos algoritmos detectores, entregando diferencias de medias estadísticamente significativas con una confianza del 95\%''
 
-Respecto de los valores de sensibilidad espacial promedio obtenido en la evaluación por cada clasificador fueron categóricos, HOG/Adaboost obtuvo un puntaje de 11.065; mientras que HOG/SVM lineal obtuvo un puntaje de 3.489 por lo que HOG/SVM lineal tiene un valor de PPD aproximada mente 3 veces mejor por lo que es HOG/SVM es la combinación descriptor/clasificador de elección. Por otra parte el valor de sensibilidad espacial se ve afectado por el tamaño de la venta de clasificación. En el caso de HOG/Adaboost este fenómeno no tiene una tendencia clara. Sin embargo, en el caso de HOG/SVM el valor aumenta conforme aumenta el tamaño de la ventana por lo que la ventana mas pequeña (32x64px) es la que posee un mejor valor de sensibilidad espacial.
- 
+Ya que la métrica PPD propuesta permite la medición de la sensibilidad espacial en cuanto a la vecindad de un objeto a detectar. Además las diferencias obtenidas son estadísticamente significativas con un nivel de confianza del 95\% por lo que es posible decir que la métrica permite diferenciar entre los resultados obtenidos pos un clasificador y otro.
 
-Para realizar una mejora sobre estos resultados es conveniente analizar algunos tamaños intermedios de ventana; de esta forma será posible confirmar que la tendencia de crecimiento se mantiene y encontrar una tendencia también para HOG/Adaboost.
+Esto es un contexto bien delimitado que permite entregar mayor información sobre el problema de las detecciones múltiples. Con esta información es posible en trabajos futuros proponer alternativas a NMS como método de post procesamiento o bien refinar el método de acuerdo al problema particular que se esté analizando. Esto es una de los aportes mas relevantes. 
+
+Respecto de los valores de sensibilidad espacial promedio obtenido en la evaluación por cada clasificador fueron categóricos y estadísticamente significativos, HOG/Adaboost obtuvo un puntaje promedio de 11.065; mientras que HOG/SVM lineal obtuvo un puntaje de 3.489 por lo que HOG/SVM lineal tiene un valor de PPD mejor, es sin embargo el análisis estadístico inferencial sobre las medias muestrales lo que permite afirmar que  HOG/SVM es la combinación descriptor/clasificador de elección pues su sensibilidad espacial es mayor. 
 
 A continuación se revisará los objetivos y su nivel de cumplimiento de acuerdo a lo expuesto en el presente documento.
 
 \section{Conclusiones sobre los objetivos}
 
-En el capítulo~\ref{cap:intro} de este documento se planteó un objetivo general y  algunos objetivos específicos. En la presente sección se concluirá sobre el nivel de cumplimiento de dichos objetivos así como estos guiaron y definieron el desarrollo del proyecto. En primer lugar se concluye sobre los objetivos específicos. En segundo lugar se da paso a las conclusiones sobre el objetivo general. Finalmente se concluirá sobre los posibles nuevos objetivos de futuros trabajos.
+En el capítulo~\ref{cap:intro} de este documento se planteó un objetivo general y algunos objetivos específicos. En la presente sección se concluirá sobre el nivel de cumplimiento de dichos objetivos así como estos guiaron y definieron el desarrollo del proyecto. En primer lugar se concluye sobre los objetivos específicos. En segundo lugar se da paso a las conclusiones sobre el objetivo general. Finalmente se concluirá sobre los posibles nuevos objetivos de futuros trabajos.
 
 %***DQ Hacer esto recordar
 
@@ -36,30 +36,26 @@ Al inicio se planteó un conjunto de objetivos específicos que debían cumplirs
 
 \begin{enumerate}
 
-\item Crear un modelo matemático que permita generar un indicador que describa la sensibilidad espacial según la respuesta de los clasificadores.
+\item Proponer un modelo matemático que permita generar un métrica que describa la sensibilidad espacial.
 
-Para el cumplir con este objetivo se realizó la proposición de un modelo matemático. Este modelo se tradujo en el desarrollo de una nueva métrica que permitiera cuantificar el concepto de sensibilidad espacial, de esta forma se diseñó la métrica PPD. Como quedó demostrado en la sección~\ref{sec:dem} del capítulo~\ref{cap:metricas} la métrica cumple con los axiomas de métrica. Este paso era parte fundamental del desarrollo del trabajo de título aquí expuesto. Esta importancia es otorgada en función de que la métrica sirve de base y guía para la construcción del proceso de evaluación. 
+\subitem Para el cumplir con este objetivo se realizó la proposición de un modelo matemático. Este modelo se tradujo en el desarrollo de una nueva métrica que permitiera caracterizar y cuantificar el concepto de sensibilidad espacial, de esta forma se diseñó la métrica PPD. Como quedó demostrado en la sección~\ref{sec:dem} del capítulo~\ref{cap:metricas} la métrica cumple con los axiomas de métrica. Este paso era parte fundamental del desarrollo del trabajo de título aquí expuesto. Esta importancia es otorgada en función de que la métrica sirve de base y guía para la construcción del proceso de evaluación. 
 
-La métrica es parte central en el análisis comparativo; es a través de ella que es posible caracterizar los clasificadores en cuanto a sensibilidad espacial respecta. Por lo anterior el nivel de cumplimento de este objetivo específico es completo.
+\subitem La métrica es parte central en el análisis comparativo; es a través de ella que es posible caracterizar los clasificadores en cuanto a sensibilidad espacial respecta. Por lo anterior el nivel de cumplimento de este objetivo específico es completo.
 
-\item Diseñar una metodología de evaluación de la sensibilidad espacial de un clasificador en la vecindad de un peatón.
+\item Evaluar la sensibilidad espacial de un clasificador en la vecindad de un peatón.
 
-La estructura del proceso expuesta en el capítulo~\ref{cap:eval} refleja el nivel de cumplimiento de este punto. En general la metodología desarrollada cumple con lo planteado pues luego de su aplicación es perfectamente posible realizar la comparación de sensibilidad espacial. Sin embargo, existen aspectos poco perfeccionados de la metodología que podrían en trabajos futuros desarrollarse de forma que sea posible la extracción de una mayor cantidad de información. 
+\subitem La estructura del proceso expuesta en el capítulo~\ref{cap:eval} refleja el nivel de cumplimiento de este punto. En general la metodología desarrollada cumple con lo planteado pues luego de su aplicación es perfectamente posible realizar la comparación de sensibilidad espacial. Sin embargo, existen aspectos poco perfeccionados de la metodología que podrían en trabajos futuros desarrollarse de forma que sea posible la extracción de una mayor cantidad de información. 
 
-La estructura general del proceso de evaluación esta basada en el proceso de entrenamiento general de un detector de objetos. Incluye además algunos pasos de normalización que contribuyen al análisis comparativo. Algunos de los elementos que podrían desarrollarse para incluir dentro del proceso es una evaluación de la performance de los clasificadores. De esta forma sería posible comparar la relación del indicador de sensibilidad con los indicadores de performance \ie comparar con falso positivos por ventana o con falsos positivos por imagen.
+\subitem La estructura general del proceso de evaluación esta basada en el entrenamiento general de un detector de objetos. Incluye además algunos pasos de normalización que contribuyen al análisis comparativo. Algunos de los elementos que podrían desarrollarse para incluir dentro del proceso es una evaluación de la performance de los clasificadores. De esta forma sería posible comparar la relación del indicador de sensibilidad con los indicadores de performance \ie comparar con falso positivos por ventana o con falsos positivos por imagen.
 
 
-\item Desarrollar un software modular que permita la automatización de la metodología y la comparación de clasificadores.
+\item Desarrollar un software modular que permita automatizar la evaluación de la sensibilidad espacial para cada peatón en un conjunto de \textit{``ground truths''}.
 
-La implementación de un software modular que pudiera automatizar el proceso de evaluación de la metodología se realizo bajo el marco del desarrollo ágil de la metodología de software XP realizando una adaptación para su funcionamiento en equipos de desarrollo unipersonales. La modularidad de la implementación es relativa. En particular existen dos módulos separados del proceso. El primero de estos módulos incluye el entrenamiento, clasificación y proceso de normalización. Este módulo fue programado en lenguaje C++. El segundo de los módulos realiza la etapa de cálculo de métrica y fue programado en Python. Ambos software fueron desarrollados para ser utilizados a través del intérprete de comandos de Linux.
+\subitem La implementación de un software modular que pudiera automatizar el proceso de evaluación de la metodología se realizó bajo el marco del desarrollo ágil de la metodología de software XP realizando una adaptación para su funcionamiento en equipos de desarrollo unipersonales. La modularidad de la implementación es relativa. En particular existen dos módulos separados del proceso. El primero de estos módulos incluye el entrenamiento, clasificación y proceso de normalización. Este módulo fue programado en lenguaje C++. El segundo de los módulos realiza la etapa de cálculo de métrica y fue programado en Python. Ambos software fueron desarrollados para ser utilizados a través del intérprete de comandos de Linux.
 
-\item Implementar los descriptores y clasificadores que no se encuentren previamente implementados para su evaluación.
+\item Determinar cuál de los clasificadores posee la mejor sensibilidad espacial para minimizar detecciones múltiples de peatones en el set de datos INRIA.
 
-La implementación de estos descriptores y clasificadores no fue necesaria por que convenientemente se seleccionaron aquellos que previamente se encontraban implementados en la biblioteca OpenCV. Tanto HOG, como SVM lineal y Adaboost son algoritmos muy utilizados dentro del campo de la visión por computador por lo que era muy probable encontrar versiones implementadas y válidas de dichos algoritmos. Por lo que este objetivo en particular funcionaba como un seguro al momento en caso de no encontrar dichas implementaciones. Sin embargo, este objetivo debería trascender a los trabajos futuros, en los que se incluya dentro de la evaluación algoritmos que no esteń implementados para libre disposición. 
-
-\item Determinar cuál de los clasificadores corresponde al que posee la mejor sensibilidad espacial para minimizar detecciones múltiples de peatones en el set de datos INRIA.
-
-Este objetivo fue planteado como objetivo de completitud ya que requiere que en todos los objetivos anteriores se cumplan en cierta medida. Sin embargo, se diferencia del objetivo general en que no es categórico en la inclusión de ellos. En particular hace referencia a la completitud del análisis de resultados final. Es por esto que en el capítulo~\ref{cap:analisis} se puede mesurar la completitud de este objetivo. La decisión final fue escoger HOG/SVM lineal por sobre HOG/Adaboost dado el indicador de sensibilidad espacial y su estudio descriptivo. Ya que el valor de PPD promedio de HOG/SVM lineal es aproximadamente 3 veces menor que el de HOG/Adaboost y su desviación estándar también es menor.
+\subitem Para el cumplimiento de este objetivo fue necesario aplicar elementos de estadística inferencial. Por esta razón se enunció una hipótesis (sección~\ref{experimento:hipotesis}) y se diseño un experimento para poder probarla. Una vez realizado el experimento la hipótesis fue correctamente probada utilizando un análisis de la varianza (ANOVA) de dos vías y medidas repetidas. Este análisis el cual permitió comparar las muestras obtenidas de cada combinación clasificador-escala. Una vez probada la hipótesis es posible discernir entra los resultado obtenidos cual es el clasificador con mejor sensibilidad espacial  con lo que se da cumplimiento al objetivo planteado. 
 
 \end{enumerate}
 
@@ -67,23 +63,31 @@ Este objetivo fue planteado como objetivo de completitud ya que requiere que en 
 \subsection{Sobre el objetivo general}
 
 
-El objetivo general planteado es ``Desarrollar una metodología que permita la comparación y un software de pruebas que permita la evaluación sistemática de múltiples clasificadores con el fin de encontrar aquel con mejor sensibilidad espacial, para minimizar detecciones múltiples en la vecindad del peatón utilizando el set de datos INRIA''. Este objetivo general se desglosa en cuatro puntos importantes.
+El objetivo general planteado es ``Desarrollar y probar una métrica que permita la comparación de la sensibilidad espacial entre diferentes esquemas descriptor-clasificador, encontrando aquel que reduce detecciones múltiples en la vecindad del peatón utilizando el set de datos de referencia INRIA''.
 
-Dado que el objetivo general fue ideado como la suma de los específicos y teniendo en cuenta que estos fueron expuestos como completos en la sección anterior. Evaluando cada aspecto entonces posible decir que el objetivo está cumplido. Existen sin embargo tres puntos claves dentro de este objetivo. En primer lugar se plantea el desarrollo de un metodológico, este  fue expuesto en el capítulo~\ref{cap:eval} del cual fue posible obtener resultados. El segundo punto dice relación con un software de evaluación, el cual fue construido utilizando una adaptación al contexto unipersonal de la metodología ágil \textit{Extreme Programming} y cumple con el objetivo de su construcción al ser posible evaluar con el diferentes clasificadores. El tercer punto tiene relación con el desarrollo de la métrica y su utilización en el análisis comparativo. Estos tres aspectos circunscriben los elemento más importantes relacionados con el objetivo general. 
+Dado que el objetivo general fue ideado como la suma de los específicos y teniendo en cuenta que estos fueron expuestos como completos en la sección anterior. Evaluando cada aspecto entonces posible decir que el objetivo está cumplido. Existen sin embargo tres puntos claves dentro de este objetivo. En primer lugar se plantea el desarrollo de una métrica, este  fue expuesto en el capítulo~\ref{cap:metricas} del cual fue posible demostrar matemáticamente que la medida creada cumple con los criterios de una métrica. El segundo punto dice relación con el planteamiento de una hipótesis y  el diseño de un procedimiento experimental que permitiera probarla. El tercer punto tiene relación con la utilización de la métrica para discernir entre un algoritmo y otro por medio de un análisis comparativo. Estos tres aspectos circunscriben los elemento más importantes relacionados con el objetivo general. 
 
-Una vez revisados los objetivos en la siguiente sección se revisarán algunas de las posibles lineas de las mejoras futuras que contribuirían a continuar con esta línea de investigación.
+Una vez revisados los objetivos en la siguiente sección se revisarán algunas de las posibles líneas de las mejoras futuras que contribuirían a continuar con esta línea de investigación.
 
 
 \section{Trabajo futuro}
 
-Una vez propuesta y probada la métrica, queda mucho camino por delante en general la cantidad de lineas de expansión posible para un problema como éste es muy grande. Por esto se mencionarán algunos de los elementos que resultaría conveniente investigar en futuros trabajos relacionados con éste. 
+Una vez propuesta y probada la métrica, queda aún camino por delante en general la cantidad de líneas de expansión posible para un problema como éste es extensa. Por esto se mencionarán algunos de los elementos que resultaría conveniente investigar en futuros trabajos relacionados con éste. 
 
 \begin{itemize}
-\item Más combinaciones Descriptor/Clasificador. Este es un de los punto si duda más relevante. El estudio de dos combinaciones es aceptable, pero al tener más elementos para comparar se permite también ampliar la libertad de decisión \ie tener más posibilidades a la hora de escoger entre más es mejor.
+\item Más combinaciones Descriptor/Clasificador. Este es uno de los puntos, si duda, más relevantes. El estudio de dos combinaciones es aceptable, pero al tener más elementos para comparar se permite también ampliar la libertad de decisión \ie tener más posibilidades a la hora de escoger entre más es mejor.
 \item Ampliar la variedad de propiedades evaluadas. La evaluación de la sensibilidad espacial ayuda en la toma de decisiones respecto de el post procesamiento en cuanto a evitar múltiples detecciones. Sin embargo la inclusión de otras propiedades permitiría evaluar otros aspectos, lo que es bueno para estudiar el problema en un plano general.
 \item Analizar variaciones en el set de datos. Los ejemplos seleccionados para el entrenamiento puede eventualmente repercutir en la sensibilidad espacial. Un ejemplo de ello podría ser utilizar negativos que se encuentren en la vecindad. Se podría pensar que el uso de este tipo de negativos aumenten la sensibilidad espacial.
-\item Utilizar otros set de datos. Analizar el comportamiento de la sensibilidad espacial con otros set de datos de peatones y no solo el set de datos INRIA.
 \item Analizar sensibilidad espacial para otras clases. Analizar detección de otras categorías de objetos no solo peatones.
 \end{itemize}
 
 Es importante dar continuidad a investigaciones como ésta ya que permiten ampliar el conocimiento existente sobre el problema y por tanto amplían las posibilidades de solución. Esta contribución pretende ser punto de partida para el análisis de la sensibilidad espacial en detectores de personas.
+
+\section{Reflexiones personales}
+
+La elección de una tesis con un tema de visión por computador fue un desafío auto-impuesto, ya que a priori se sabía que no era la elección mas sencilla al menos para el autor. Sin embargo hay algunos elementos cautivantes relacionados con la visión por computador, quizás porque es un área que tiene hoy avances increíbles, pero que a la vez se hacen cotidianos a través de las creaciones de tantos autores de ciencia ficción en libros y películas. Vemos estos avances como si siempre hubieran estado ahí. 
+
+Estas entre otras razones fueron motivación suficiente para querer realizar un aporte en esta área. Luego de haber investigado en el área es increíble la cantidad de soluciones entregadas por la visión por computador en diversos aspectos, es increíble la cantidad de cosas quedan por hacer y la cantidad áreas afines. El estudio de la visión por computador permite comprender no solo conceptos de ingeniería, sino que también comportamientos humanos y como hoy el ser humano tiene una gran dependencia del sentido de la visión.
+
+En específico respecto de este trabajo quizá hubiera sido beneficioso tener mas tiempo para construir una solución mas generalizada. También hubiera sido importante haber contado con mas conocimiento previo en algunas materias sobre todo en el campo estadístico.  Hubiera sido enriquecedor tener un espacio para trabajar en conjunto con otros memoristas del área y de otras áreas. Sin embargo no todo son ausencias hubo también buenos resultados, buenas experiencias y nuevos conocimientos aprendidos que complementan la formación como ingeniero. 
+

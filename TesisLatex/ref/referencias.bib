@@ -9,229 +9,158 @@ title = {{Visi\'{o}n por computadora}},
 url = {http://www.depi.itch.edu.mx/apacheco/expo/html/ai11/vision.html},
 year = {2002}
 }
-@inproceedings{Mikolajczyk2004a,
-abstract = {We describe a novel method for human detection in single images which can detect full bodies as well as close-up views in the presence of clutter and occlusion. Humans are modeled as flexible assemblies of parts, and robust part detection is the key to the approach. The parts are represented by co-occurrences of local features which captures the spatial layout of the part’s appearance. Feature selection and the part detectors are learnt from training images using AdaBoost. The detection algorithm is very efficient as (i) all part detectors use the same initial features, (ii) a coarse-to-fine cascade approach is used for part detection, (iii) a part assembly strategy reduces the number of spurious detections and the search space. The results outperform existing human detectors.},
-author = {Mikolajczyk, Krystian and Schmid, Cordelia and Zisserman, Andrew},
-booktitle = {Proc. European Conference on Computer Vision (ECCV)},
-doi = {10.1007/978-3-540-24670-1\_6},
-isbn = {978-3-540-21984-2},
-issn = {03029743},
-pages = {69--82},
-title = {{Human detection based on a probabilistic assembly of robust part detectors}},
-url = {http://www.springerlink.com/content/j576cjbqmc4dqyug/$\backslash$nhttp://www.cis.pku.edu.cn/faculty/vision/zhangchao/Summer2007/Zisserman\_ECCV\_2004.pdf$\backslash$nhttp://www.springerlink.com/content/j576cjbqmc4dqyug$\backslash$nhttp://www.springerlink.com/content/j576cjbqmc4dqyug/fulltext.pdf},
-volume = {3021},
-year = {2004}
+
+@incollection{Mikolajczyk2004a,
+  title={Human detection based on a probabilistic assembly of robust part detectors},
+  author={Mikolajczyk, Krystian and Schmid, Cordelia and Zisserman, Andrew},
+  booktitle={Computer Vision-ECCV 2004},
+  pages={69--82},
+  year={2004},
+  publisher={Springer}
 }
-@inproceedings{Gupta2008,
-abstract = {Extraction and matching of discriminative feature points in images is an important problem in computer vision with applications in image classification, object recognition, mosaicing, automatic 3D reconstruction and stereo. Features are represented and matched via descriptors that must be invariant to small errors in the localization and scale of the extracted feature point, viewpoint changes, and other kinds of changes such as illumination, image compression and blur. While currently used feature descriptors are able to deal with many of such changes, they are not invariant to a generic monotonic change in the intensities, which occurs in many cases. Furthermore, their performance degrades rapidly with many image degradations such as blur and compression where the intensity transformation is non-linear. In this paper, we present a new feature descriptor that obtains invariance to a monotonic change in the intensity of the patch by looking at orders between certain pixels in the patch. An order change between pixels indicates a difference between the patches which is penalized. Summation of such penalties over carefully chosen pixel pairs that are stable to small errors in their localization and are independent of each other leads to a robust measure of change between two features. Promising results were obtained using this approach that show significant improvement over existing methods, especially in the case of illumination change, blur and JPEG compression where the intensity of the points changes from one image to the next.},
-author = {Gupta, Raj and Mittal, Anurag},
-booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
-doi = {10.1007/978-3-540-88688-4-20},
-isbn = {3540886850},
-issn = {03029743},
-pages = {265--277},
-title = {{SMD: A locally stable monotonic change invariant feature descriptor}},
-volume = {5303 LNCS},
-year = {2008}
+
+@incollection{Gupta2008,
+  title={Smd: A locally stable monotonic change invariant feature descriptor},
+  author={Gupta, Raj and Mittal, Anurag},
+  booktitle={Computer Vision--ECCV 2008},
+  pages={265--277},
+  year={2008},
+  publisher={Springer}
 }
+
 @article{Sirovich1987,
-abstract = {A method is presented for the representation of (pictures of) faces. Within a specified framework the representation is ideal. This results in the characterization of a face, to within an error bound, by a relatively low-dimensional vector. The method is illustrated in detail by the use of an ensemble of pictures taken for this purpose.},
-author = {Sirovich, L and Kirby, M},
-doi = {10.1364/JOSAA.4.000519},
-issn = {1084-7529},
-journal = {Journal of the Optical Society of America. A, Optics and image science},
-pages = {519--524},
-pmid = {3572578},
-title = {{Low-dimensional procedure for the characterization of human faces.}},
-volume = {4},
-year = {1987}
+  title={Low-dimensional procedure for the characterization of human faces},
+  author={Sirovich, Lawrence and Kirby, Michael},
+  journal={JOSA A},
+  volume={4},
+  number={3},
+  pages={519--524},
+  year={1987},
+  publisher={Optical Society of America}
 }
+
 @article{Schapire1990,
-abstract = {The problem of improving the accuracy of a hypothesis output by a
-learning algorithm in the distribution-free learning model is
-considered. A concept class is learnable (or strongly learnable) if,
-given access to a source of examples from the unknown concept, the
-learner with high probability is able to output a hypothesis that is
-correct on all but an arbitrarily small fraction of the instances. The
-concept class is weakly learnable if the learner can produce a
-hypothesis that forms only slightly better than random guessing. It is
-shown that these two notions of learnability are equivalent. An explicit
-method is described for directly converting a weak learning algorithm
-into one that achieves arbitrarily high accuracy. This construction may
-have practical applications as a tool for efficiently converting a
-mediocre learning algorithm into one that performs extremely well. In
-addition, the construction has some interesting theoretical consequences
-},
-author = {Schapire, Robert E.},
-doi = {10.1007/BF00116037},
-isbn = {0-8186-1982-1},
-issn = {08856125},
-journal = {Machine Learning},
-keywords = {Machine learning,PAC learning,learnability theory,learning from examples,polynomial-time identification},
-pages = {197--227},
-title = {{The strength of weak learnability}},
-volume = {5},
-year = {1990}
+  title={The strength of weak learnability},
+  author={Schapire, Robert E},
+  journal={Machine learning},
+  volume={5},
+  number={2},
+  pages={197--227},
+  year={1990},
+  publisher={Springer}
 }
-@misc{Ullman2001,
-abstract = {The task of visual classification is the recognition of an object in the image as belonging to a general class of similar objects, such as a face, a car, a dog, and the like. This is a fundamental and natural task for biological visual systems, but it has proven difficult to perform visual classification by artificial computer vision systems. The main reason for this difficulty is the variability of shape within a class: different objects vary widely in appearance, and it is difficult to capture the essential shape features that characterize the members of one category and distinguish them from another, such as dogs from cats. In this paper we describe an approach to classification using a fragment-based representation. In this approach, objects within a class are represented in terms of common image fragments that are used as building blocks for representing a large variety of different objects that belong to a common class. The fragments are selected from a training set of images based on a criterion of maximizing the mutual information of the fragments and the class they represent. For the purpose of classification the fragments are also organized into types, where each type is a collection of alternative fragments, such as different hairline or eye regions for face classification. During classification, the algorithm detects fragments of the different types, and then combines the evidence for the detected fragments to reach a final decision. Experiments indicate that it is possible to trade off the complexity of fragments with the complexity of the combination and decision stage, and this tradeoff is discussed. The method is different from previous part-based methods in using class-specific object fragments of varying complexity, the method of selecting fragments, and the organization into fragment types. Experimental results of detecting face and car views show that the fragment-based approach can generalize well to a variety of novel image views within a class while maintaining low mis-classification error rates. We briefly discuss relationships between the proposed method and properties of parts of the primate visual system involved in object perception.},
-author = {Ullman, Shimon and Sali, Erez and Vidal-naquet, Michel},
-booktitle = {Review Literature And Arts Of The Americas},
-isbn = {3-540-42120-3},
-pages = {85--100},
-title = {{A Fragment-Based Approach to Object Representation and Classification}},
-url = {http://www.springerlink.com/index/cagxcdwphj8r1bak.pdf},
-volume = {2059},
-year = {2001}
+
+@incollection{Ullman2001,
+  title={A fragment-based approach to object representation and classification},
+  author={Ullman, Shimon and Sali, Erez and Vidal-Naquet, Michel},
+  booktitle={Visual Form 2001},
+  pages={85--100},
+  year={2001},
+  publisher={Springer}
 }
-@inproceedings{Wojek2008,
-abstract = {Over the years a number of powerful people detectors have been proposed. While it is standard to test complete detectors on publicly available datasets, it is often unclear how the different components (e.g. features and classifiers) of the respective detectors compare. Therefore, this paper contributes a systematic comparison of the most prominent and successful people detectors. Based on this evaluation we also propose a new detector that outperforms the state-of-art on the INRIA person dataset by combining multiple features.},
-author = {Wojek, Christian and Schiele, Bernt},
-booktitle = {PATTERN RECOGNITION},
-doi = {10.1007/978-3-540-69321-5\_9},
-isbn = {978-3-540-69320-8},
-issn = {0302-9743},
-pages = {82--91},
-title = {{A performance evaluation of single and multi-feature people detection}},
-volume = {5096},
-year = {2008}
+
+@incollection{Wojek2008,
+  title={A performance evaluation of single and multi-feature people detection},
+  author={Wojek, Christian and Schiele, Bernt},
+  booktitle={Pattern Recognition},
+  pages={82--91},
+  year={2008},
+  publisher={Springer}
 }
-@incollection{Battaglini2010,
-author = {Battaglini, P.},
-booktitle = {Fisiolog\'{\i}a M\'{e}dica},
-pages = {379--408},
-title = {{Fisiolog\'{\i}a de la visi\'{o}n}},
-year = {2010}
+
+@book{Battaglini2010,
+  title={Fisiología Médica},
+  author={Conti, F.},
+  isbn={9789701073414},
+  url={http://books.google.cl/books?id=z0amZwEACAAJ},
+  year={2010},
+  pages = {379--408},
+  publisher={McGraw-Hill Interamericana de Espa{\~n}a S.L.}
 }
-@article{Ke2004,
-abstract = {Stable local feature detection and representation is a fundamental component of many image registration and object recognition algorithms. Mikolajczyk and Schmid (June 2003) recently evaluated a variety of approaches and identified the SIFT [D. G. Lowe, 1999] algorithm as being the most resistant to common image deformations. This paper examines (and improves upon) the local image descriptor used by SIFT. Like SIFT, our descriptors encode the salient aspects of the image gradient in the feature point's neighborhood; however, instead of using SIFT's smoothed weighted histograms, we apply principal components analysis (PCA) to the normalized gradient patch. Our experiments demonstrate that the PCA-based local descriptors are more distinctive, more robust to image deformations, and more compact than the standard SIFT representation. We also present results showing that using these descriptors in an image retrieval application results in increased accuracy and faster matching.},
-author = {Ke, Yan and Sukthankar, R.},
-doi = {10.1109/CVPR.2004.1315206},
-isbn = {0-7695-2158-4},
-issn = {1063-6919},
-journal = {Proceedings of the 2004 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2004. CVPR 2004.},
-title = {{PCA-SIFT: a more distinctive representation for local image descriptors}},
-volume = {2},
-year = {2004}
+
+@inproceedings{Ke2004,
+  title={PCA-SIFT: A more distinctive representation for local image descriptors},
+  author={Ke, Yan and Sukthankar, Rahul},
+  booktitle={Computer Vision and Pattern Recognition, 2004. CVPR 2004. Proceedings of the 2004 IEEE Computer Society Conference on},
+  volume={2},
+  pages={II--506},
+  year={2004},
+  organization={IEEE}
 }
-@article{Ke,
-author = {Ke, Yan and Sukthankar, Rahul},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Ke, Sukthankar - Unknown - PCA-SIFT A More Distinctive Representation for Local Image Descriptors 2 . Review of the SIFT Algorithm.pdf:pdf},
-pages = {2--9},
-title = {{PCA-SIFT : A More Distinctive Representation for Local Image Descriptors 2 . Review of the SIFT Algorithm}}
+
+@phdthesis{Dalal2006,
+  title={Finding people in images and videos},
+  author={Dalal, Navneet},
+  year={2006},
+  school={Institut National Polytechnique de Grenoble-INPG}
 }
-@article{Dalal2006,
-abstract = {This thesis targets the detection of humans and other object classes in images and videos. Our focus is on developing robust feature extraction algorithms that encode image regions as highdimensional feature vectors that support high accuracy object/non-object decisions. To test our feature sets we adopt a relatively simple learning framework that uses linear Support Vector Machines to classify each possible image region as an object or as a non-object. The approach is data-driven and purely bottom-up using low-level appearance and motion vectors to detect objects. As a test case we focus on person detection as people are one of the most challenging object classes with many applications, for example in film and video analysis, pedestrian detection for smart cars and video surveillance. Nevertheless we do not make any strong class specific assumptions and the resulting object detection framework also gives state-of-the-art performance for many other classes including cars, motorbikes, cows and sheep. This thesis makes four main contributions. Firstly, we introduce grids of locally normalised Histograms of Oriented Gradients (HOG) as descriptors for object detection in static images. The HOG descriptors are computed over dense and overlapping grids of spatial blocks, with image gradient orientation features extracted at fixed resolution and gathered into a highdimensional feature vector. They are designed to be robust to small changes in image contour locations and directions, and significant changes in image illumination and colour, while remaining highly discriminative for overall visual form. We show that unsmoothed gradients, fine orientation voting, moderately coarse spatial binning, strong normalisation and overlapping blocks are all needed for good performance. Secondly, to detect moving humans in videos, we propose descriptors based on oriented histograms of differential optical flow. These are similar to static HOG descriptors, but instead of image gradients, they are based on local differentials of dense optical flow. They encode the noisy optical flow estimates into robust feature vectors in a manner that is robust to the overall camera motion. Several variants are proposed, some capturing motion boundaries while others encode the relative motions of adjacent image regions. Thirdly, we propose a general method based on kernel density estimation for fusing multiple overlapping detections, that takes into account the number of detections, their confidence scores and the scales of the detections. Lastly, we present work in progress on a parts based approach to person detection that first detects local body parts like heads, torso, and legs and then fuses them to create a global overall person detector.},
-author = {Dalal, N},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Dalal - 2006 - Finding people in images and videos.pdf:pdf},
-keywords = {Computer Vision,INRIA},
-mendeley-tags = {Computer Vision,INRIA},
-pages = {149},
-title = {{Finding people in images and videos}},
-url = {http://tel.archives-ouvertes.fr/tel-00390303/},
-year = {2006}
-}
+
 @book{Haralick1992,
-abstract = {From the Publisher: This two-volume set is an authoritative, comprehensive, modern work on computer vision that covers all of the different areas of vision with a balanced and unified approach. The discussion in "Volume I" focuses on image in, and image out or feature set out. "Volume II" covers the higher level techniques of illumination, perspective projection, analytical photogrammetry, motion, image matching, consistent labeling, model matching, and knowledge-based vision systems.},
-author = {Haralick, Robert M and Shapiro, Linda G},
-booktitle = {Computer and Robot Vision},
-isbn = {0201108771},
-title = {{Computer and Robot Vision}},
-url = {http://portal.acm.org/citation.cfm?id=573190},
-volume = {1},
-year = {1992}
+  title={Computer and robot visi{\'o}n},
+  author={Haralick, R.M. and Shapiro, L.G.},
+  number={v. 1},
+  isbn={9780201108774},
+  lccn={lc90025550},
+  series={Computer and Robot Vision},
+  url={https://books.google.cl/books?id=jvRRAAAAMAAJ},
+  year={1992},
+  publisher={Addison-Wesley Pub. Co.}
 }
-@article{Freund1995,
-abstract = {In the first part of the paper we consider the problem of dynamically$\backslash$n$\backslash$napportioning resources among a set of options in a worst-case on-line$\backslash$n$\backslash$nframework. The model we study can be interpreted as a broad, abstract$\backslash$n$\backslash$nextension of the well-studied on-line prediction model to a general$\backslash$n$\backslash$ndecision-theoretic setting. We show that the multiplicative weight-$\backslash$n$\backslash$nupdate LittlestoneWarmuth rule can be adapted to this model, yielding$\backslash$n$\backslash$nbounds that are slightly weaker in some cases, but applicable to a$\backslash$ncon-$\backslash$n$\backslash$nsiderably more general class of learning problems. We show how the$\backslash$n$\backslash$nresulting learning algorithm can be applied to a variety of problems,$\backslash$n$\backslash$nincluding gambling, multiple-outcome prediction, repeated games, and$\backslash$n$\backslash$nprediction of points in R\^{}\{n\}. In the second part of the paper we$\backslash$napply the$\backslash$n$\backslash$nmultiplicative weight-update technique to derive a new boosting algo-$\backslash$n$\backslash$nrithm. This boosting algorithm does not require any prior knowledge$\backslash$n$\backslash$nabout the performance of the weak learning algorithm. We also study$\backslash$n$\backslash$ngeneralizations of the new boosting algorithm to the problem of$\backslash$n$\backslash$nlearning functions whose range, rather than being binary, is an arbitrary$\backslash$n$\backslash$nfinite set or a bounded segment of the real line.},
-author = {Freund, Y and Schapire, RE},
-doi = {10.1006/jcss.1997.1504},
-isbn = {3540591192},
-issn = {00220000},
-journal = {Computational learning theory},
-keywords = {Adaboost,boosting,multi-class classification},
-pages = {119--139},
-pmid = {10394},
-title = {{A desicion-theoretic generalization of on-line learning and an application to boosting}},
-url = {http://link.springer.com/chapter/10.1007/3-540-59119-2\_166},
-volume = {55},
-year = {1995}
+
+@inproceedings{Freund1995,
+  title={A desicion-theoretic generalization of on-line learning and an application to boosting},
+  author={Freund, Yoav and Schapire, Robert E},
+  booktitle={Computational learning theory},
+  pages={23--37},
+  year={1995},
+  organization={Springer}
 }
-@inproceedings{Mikolajczyk2002,
-abstract = {This paper presents a novel approach for detecting affine invariant interest points. Our method can deal with significant affine transformations including large scale changes. Such transformations introduce significant changes in the point location as well as in the scale and the shape of the neighbourhood of an interest point. Our approach allows to solve for these problems simultaneously. It is based on three key ideas: 1) The second moment matrix computed in a point can be used to normalize a region in an affine invariant way (skew and stretch). 2) The scale of the local structure is indicated by local extrema of normalized derivatives over scale. 3) An affine-adapted Harris detector determines the location of interest points. A multi-scale version of this detector is used for initialization. An iterative algorithm then modifies location, scale and neighbourhood of each point and converges to affine invariant points. For matching and recognition, the image is characterized by a set of affine invariant points; the affine transformation associated with each point allows the computation of an affine invariant descriptor which is also invariant to affine illumination changes. A quantitative comparison of our detector with existing ones shows a significant improvement in the presence of large affine deformations. Experimental results for wide baseline matching show an excellent performance in the presence of large perspective transformations including significant scale changes. Results for recognition are very good for a database with more than 5000 images.},
-author = {Mikolajczyk, Krystian and Schmid, Cordelia},
-booktitle = {Computer Vision - ECCV 2002},
-doi = {10.1007/3-540-47969-4\_9},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Mikolajczyk, Schmid - 2002 - An affine invariant interest point detector.pdf:pdf},
-isbn = {978-3-540-43745-1},
-issn = {0920-5691},
-keywords = {image features,matching,recognition},
-pages = {128--142},
-title = {{An affine invariant interest point detector}},
-url = {http://www.springerlink.com/index/d946wrklrq1fnpjh.pdf},
-volume = {2350},
-year = {2002}
+
+@incollection{Mikolajczyk2002,
+  title={An affine invariant interest point detector},
+  author={Mikolajczyk, Krystian and Schmid, Cordelia},
+  booktitle={Computer Vision—ECCV 2002},
+  pages={128--142},
+  year={2002},
+  publisher={Springer}
 }
+
 @article{IEEE1990,
-abstract = {Describes the IEEE Std 610.12-1990, IEEE standard glossary of software engineering terminology, which identifies terms currently in use in the field of software engineering. Standard definitions for those terms are established.},
-author = {IEEE},
-doi = {10.1109/IEEESTD.1990.101064},
-isbn = {155937067X},
-journal = {Office},
-keywords = {definitions,dictionary,glossary,software engineering,terminology},
-pages = {1},
-title = {{IEEE Standard Glossary of Software Engineering Terminology}},
-url = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=159342},
-volume = {121990},
-year = {1990}
+  title={IEEE standard glossary of software engineering terminology},
+  author={Radatz, Jane and Geraci, Anne and Katki, Freny},
+  journal={IEEE Std},
+  volume={610121990},
+  number={121990},
+  pages={3},
+  year={1990}
 }
-@article{Lienhart2002,
-abstract = { Recently Viola et al. [2001] have introduced a rapid object detection. scheme based on a boosted cascade of simple feature classifiers. In this paper we introduce a novel set of rotated Haar-like features. These novel features significantly enrich the simple features of Viola et al. and can also be calculated efficiently. With these new rotated features our sample face detector shows off on average a 10\% lower false alarm rate at a given hit rate. We also present a novel post optimization procedure for a given boosted cascade improving on average the false alarm rate further by 12.5\%.},
-archivePrefix = {arXiv},
-arxivId = {hep-th/9209032v1},
-author = {Lienhart, R. and Maydt, J.},
-doi = {10.1109/ICIP.2002.1038171},
-eprint = {9209032v1},
-isbn = {0-7803-7622-6},
-issn = {1522-4880},
-journal = {Proceedings. International Conference on Image Processing},
-pmid = {17192338},
-primaryClass = {hep-th},
-title = {{An extended set of Haar-like features for rapid object detection}},
-volume = {1},
-year = {2002}
+
+@inproceedings{Lienhart2002,
+  title={An extended set of haar-like features for rapid object detection},
+  author={Lienhart, Rainer and Maydt, Jochen},
+  booktitle={Image Processing. 2002. Proceedings. 2002 International Conference on},
+  volume={1},
+  pages={I--900},
+  year={2002},
+  organization={IEEE}
 }
-@article{Turk1991,
-abstract = {An approach to the detection and identification of human faces is
-presented, and a working, near-real-time face recognition system which
-tracks a subject's head and then recognizes the person by comparing
-characteristics of the face to those of known individuals is described.
-This approach treats face recognition as a two-dimensional recognition
-problem, taking advantage of the fact that faces are normally upright
-and thus may be described by a small set of 2-D characteristic views.
-Face images are projected onto a feature space (`face space') that best
-encodes the variation among known face images. The face space is defined
-by the `eigenfaces', which are the eigenvectors of the set of faces;
-they do not necessarily correspond to isolated features such as eyes,
-ears, and noses. The framework provides the ability to learn to
-recognize new faces in an unsupervised manner},
-author = {Turk, M.A. and Pentland, A.P.},
-doi = {10.1109/CVPR.1991.139758},
-isbn = {0-8186-2148-6},
-issn = {1063-6919},
-journal = {Proceedings. 1991 IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
-pmid = {23964806},
-title = {{Face recognition using eigenfaces}},
-year = {1991}
+
+@inproceedings{Turk1991,
+  title={Face recognition using eigenfaces},
+  author={Turk, Matthew A and Pentland, Alex P},
+  booktitle={Computer Vision and Pattern Recognition, 1991. Proceedings CVPR'91., IEEE Computer Society Conference on},
+  pages={586--591},
+  year={1991},
+  organization={IEEE}
 }
-@phdthesis{GonzalezDoria2001,
-author = {{Gonz\'{a}lez Doria}, Heidi},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gonz\'{a}lez Doria - 2001 - Las metricas del software y su uso en la regi\'{o}n.pdf:pdf},
-pages = {6--14},
-school = {Universidad de las Am\'{e}ricas Puebla},
-title = {{Las metricas del software y su uso en la regi\'{o}n}},
-url = {http://catarina.udlap.mx/u\_dl\_a/tales/documentos/lis/gonzalez\_d\_h/portada.html},
-year = {2001}
+
+@article{gonzalez2001metricas,
+  title={Las M{\'e}tricas de Software y su uso en la Regi{\'o}n},
+  author={Gonz{\'a}lez, D},
+  journal={Escuela de Ingenier{\'\i}a: Universidad de las Am{\'e}ricas-Puebla},
+  year={2001}
 }
+
 @book{Mery2004,
 address = {Santiago},
 author = {Mery, Domingo},
@@ -239,173 +168,139 @@ file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downlo
 pages = {5--6},
 publisher = {Departamento de ciencia de la computaci\'{o}n, Universidad Catolica de Chile},
 title = {{Visi\'{o}n por Computador}},
-url = {http://dmery.ing.puc.cl/index.php/publications/books-and-chapters/},
+url={http://dmery.ing.puc.cl/index.php/publications/books-and-chapters/},
 year = {2004}
 }
-@incollection{ng2002,
-author = {Ng, Andrew Y and Jordan, Michael I},
-booktitle = {Advances in Neural Information Processing Systems 14},
-editor = {Dietterich, T G and Becker, S and Ghahramani, Z},
-pages = {841--848},
-publisher = {MIT Press},
-title = {{On Discriminative vs. Generative Classifiers: A comparison of logistic regression and naive Bayes}},
-url = {http://papers.nips.cc/paper/2020-on-discriminative-vs-generative-classifiers-a-comparison-of-logistic-regression-and-naive-bayes.pdf},
-year = {2002}
+@inproceedings{ng2002,
+  title={On Discriminative vs. Generative Classifiers: A comparison of logistic regression and naive Bayes},
+  author={Ng, Andrew Y and Jordan, Michael I},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={841--848},
+  year={2002}
 }
-@article{Lowe2001,
-abstract = {There have been important recent advances in object recognition through the matching of invariant local image features. However, the existing approaches are based on matching to individual training images. This paper presents a method for combining multiple images of a 3D object into a single model representation. This provides for recognition of 3D objects from any viewpoint, the generalization of models to non-rigid changes, and improved robustness through the combination of features acquired under a range of imaging conditions. The decision of whether to cluster a training image into an existing view representation or to treat it as a new view is based on the geometric accuracy of the match to previous model views. A new probabilistic model is developed to reduce the false positive matches that would otherwise arise due to loosened geometric constraints on matching 3D and non-rigid models. A system has been developed based on these approaches that is able to robustly recognize 3D objects in cluttered natural images in sub-second times.},
-author = {Lowe, D.G.},
-doi = {10.1109/CVPR.2001.990541},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Lowe - 2001 - Local feature view clustering for 3D object recognition.pdf:pdf},
-isbn = {0-7695-1272-0},
-issn = {1063-6919},
-journal = {Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001},
-title = {{Local feature view clustering for 3D object recognition}},
-volume = {1},
-year = {2001}
+
+@inproceedings{Lowe2001,
+  title={Local feature view clustering for 3D object recognition},
+  author={Lowe, David G},
+  booktitle={Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on},
+  volume={1},
+  pages={I--682},
+  year={2001},
+  organization={IEEE}
 }
+
 @article{Papageorgiou2000,
-author = {Papageorgiou, Constantine and Poggio, Tomaso},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Papageorgiou, Poggio - 2000 - A trainable system for object detection.pdf:pdf},
-journal = {International Journal of Computer Vision},
-keywords = {computer vision,ear detection,face detection,machine learning,pattern recognition,people detection},
-number = {1},
-pages = {15--33},
-title = {{A trainable system for object detection}},
-url = {http://link.springer.com/article/10.1023/A:1008162616689},
-volume = {38},
-year = {2000}
+  title={A trainable system for object detection},
+  author={Papageorgiou, Constantine and Poggio, Tomaso},
+  journal={International Journal of Computer Vision},
+  volume={38},
+  number={1},
+  pages={15--33},
+  year={2000},
+  publisher={Springer}
 }
-@article{Niculescu-mizil2005,
-author = {Niculescu-mizil, Alexandru and Caruana, Rich},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Niculescu-mizil, Caruana - 2005 - Obtaining Calibrated Probabilities from Boosting.pdf:pdf},
-title = {{Obtaining Calibrated Probabilities from Boosting}},
-year = {2005}
+
+
+@inproceedings{Niculescu-mizil2005,
+  title={Obtaining Calibrated Probabilities from Boosting.},
+  author={Niculescu-Mizil, Alexandru and Caruana, Rich},
+  booktitle={UAI},
+  pages={413},
+  year={2005}
 }
+
 @article{Platt1999,
-author = {Platt, J},
-doi = {10.1.1.41.1639},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Platt - 1999 - Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods.pdf:pdf},
-isbn = {0262194481},
-journal = {Advances in large margin classifiers},
-pages = {61--74},
-title = {{Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods}},
-volume = {10},
-year = {1999}
+  title={Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods},
+  author={Platt, John and others},
+  journal={Advances in large margin classifiers},
+  volume={10},
+  number={3},
+  pages={61--74},
+  year={1999},
+  publisher={Cambridge, MA}
 }
+
 @article{Mohan2001,
-abstract = {We present a general example-based framework for detecting objects
-in static images by components. The technique is demonstrated by
-developing a system that locates people in cluttered scenes. The system
-is structured with four distinct example-based detectors that are
-trained to separately find the four components of the human body: the
-head, legs, left arm, and right arm. After ensuring that these
-components are present in the proper geometric configuration, a second
-example-based classifier combines the results of the component detectors
-to classify a pattern as either a \&amp;ldquo;person\&amp;rdquo; or a
-\&amp;ldquo;nonperson.\&amp;rdquo; We call this type of hierarchical architecture,
-in which learning occurs at multiple stages, an adaptive combination of
-classifiers (ACC). We present results that show that this system
-performs significantly better than a similar full-body person detector.
-This suggests that the improvement in performance is due to the
-component-based approach and the ACC data classification architecture.
-The algorithm is also more robust than the full-body person detection
-method in that it is capable of locating partially occluded views of
-people and people whose body parts have little contrast with the
-background},
-author = {Mohan, Anuj and Papageorgiou, Constantine and Poggio, Tomaso},
-doi = {10.1109/34.917571},
-isbn = {01628828 (ISSN)},
-issn = {01628828},
-journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-keywords = {Components,Machine learning,Object detection,Pattern recognition,People detection},
-pages = {349--361},
-title = {{Example-based object detection in images by components}},
-volume = {23},
-year = {2001}
+  title={Example-based object detection in images by components},
+  author={Mohan, Anuj and Papageorgiou, Constantine and Poggio, Tomaso},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={23},
+  number={4},
+  pages={349--361},
+  year={2001},
+  publisher={IEEE}
 }
-@article{Dollar2010,
-abstract = {Our key insight is that for a broad family of features, including gradient histograms, the feature responses computed at a single scale can be used to approximate feature responses at nearby scales.},
-author = {Dollar, Piotr and Belongie, Serge and Perona, Pietro},
-doi = {10.5244/C.24.68},
-isbn = {1-901725-40-5},
-journal = {Procedings of the British Machine Vision Conference 2010},
-pages = {68.1--68.11},
-title = {{The Fastest Pedestrian Detector in the West}},
-url = {http://www.bmva.org/bmvc/2010/conference/paper68/index.html},
-year = {2010}
+
+@inproceedings{Dollar2010,
+  title={The Fastest Pedestrian Detector in the West.},
+  author={Doll{\'a}r, Piotr and Belongie, Serge and Perona, Pietro},
+  booktitle={BMVC},
+  volume={2},
+  number={3},
+  pages={7},
+  year={2010},
+  organization={Citeseer}
 }
+
 @article{Rowley1998,
-abstract = {We present a neural network-based upright frontal face detection system. A retinally connected neural network examines small windows of an image and decides whether each window contains a face. The system arbitrates between multiple networks to improve performance over a single network. We present a straightforward procedure for aligning positive face examples for training. To collect negative examples, we use a bootstrap algorithm, which adds false detections into the training set as training progresses. This eliminates the difficult task of manually selecting nonface training examples, which must be chosen to span the entire space of nonface images. Simple heuristics, such as using the fact that faces rarely overlap in images, can further improve the accuracy. Comparisons with several other state-of-the-art face detection systems are presented, showing that our system has comparable performance in terms of detection and false-positive rates},
-author = {Rowley, H a and Baluja, S and Kanade, T},
-doi = {10.1109/34.655647},
-isbn = {0818672587},
-issn = {01628828},
-journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-pages = {23--38},
-title = {{Neural network-based face detection}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=655647},
-volume = {20},
-year = {1998}
+  title={Neural network-based face detection},
+  author={Rowley, Henry A and Baluja, Shumeet and Kanade, Takeo},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={20},
+  number={1},
+  pages={23--38},
+  year={1998},
+  publisher={IEEE}
 }
-@misc{Hastie2005,
-abstract = {A standard view of probability and statistics centres on distributions and hypothesis testing. To solve a real problem, say in the spread of disease, one chooses a "model," a distribution or process that is believed from tradition or intuition to be appropriate to the class of problems in question. One uses data to estimate the parameters of the model, and then delivers the resulting exactly specified model to the customer for use in prediction and classification. As a gateway to these mysteries, the combinatorics of dice and coins are recommended; the energetic youth who invest heavily in the calculation of relative frequencies will be inclined to protect their investment through faith in the frequentist philosophy that probabilities are all really relative frequencies. Those with a taste for foundational questions are referred to measure theory, an excursion from which few return.},
-author = {Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome and Franklin, James},
-booktitle = {The Mathematical Intelligencer},
-doi = {10.1007/BF02985802},
-isbn = {9780387848570},
-issn = {0343-6993},
-pages = {83--85},
-title = {{The elements of statistical learning: data mining, inference and prediction}},
-volume = {27},
-year = {2005}
+
+@article{Hastie2005,
+  title={The elements of statistical learning: data mining, inference and prediction},
+  author={Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome and Franklin, James},
+  journal={The Mathematical Intelligencer},
+  volume={27},
+  number={2},
+  pages={83--85},
+  year={2005},
+  publisher={Springer}
 }
-@misc{Kearns1994,
-abstract = {In this paper, we prove the intractability of learning several classes of Boolean functions in the distribution-free model (also called the Probably Approximately Correct or PAC model) of learning from examples. These results are representation independent, in that they hold regardless of the syntactic form in which the learner chooses to represent its hypotheses. Our methods reduce the problems of cracking a number of well-known public-key cryptosystems to the learning problems. We prove that a polynomial-time learning algorithm for Boolean formulae, deterministic finite automata or constant-depth threshold circuits would have dramatic consequences for cryptography and number theory. In particular, such an algorithm could be used to break the RSA cryptosystem, factor Blum integers (composite numbers equivalent to 3 modulo 4), and detect quadratic residues. The results hold even if the learning algorithm is only required to obtain a slight advantage in prediction over random guessing. The techniques used demonstrate an interesting duality between learning and cryptography. We also apply our results to obtain strong intractability results for approximating a generalization of graph coloring.},
-author = {Kearns, Michael and Valiant, Leslie},
-booktitle = {Journal of the ACM},
-doi = {10.1145/174644.174647},
-isbn = {0897913078},
-issn = {00045411},
-pages = {67--95},
-title = {{Cryptographic limitations on learning Boolean formulae and finite automata}},
-volume = {41},
-year = {1994}
+
+@article{Kearns1994,
+  title={Cryptographic limitations on learning Boolean formulae and finite automata},
+  author={Kearns, Michael and Valiant, Leslie},
+  journal={Journal of the ACM (JACM)},
+  volume={41},
+  number={1},
+  pages={67--95},
+  year={1994},
+  publisher={ACM}
 }
-@article{Fergus2003,
-abstract = { We present a method to learn and recognize object class models from unlabeled and unsegmented cluttered scenes in a scale invariant manner. Objects are modeled as flexible constellations of parts. A probabilistic representation is used for all aspects of the object: shape, appearance, occlusion and relative scale. An entropy-based feature detector is used to select regions and their scale within the image. In learning the parameters of the scale-invariant object model are estimated. This is done using expectation-maximization in a maximum-likelihood setting. In recognition, this model is used in a Bayesian manner to classify images. The flexible nature of the model is demonstrated by excellent results over a range of datasets including geometrically constrained classes (e.g. faces, cars) and flexible objects (such as animals).},
-author = {Fergus, R. and Perona, P. and Zisserman, A.},
-doi = {10.1109/CVPR.2003.1211479},
-isbn = {0-7695-1900-8},
-issn = {1063-6919},
-journal = {2003 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2003. Proceedings.},
-title = {{Object class recognition by unsupervised scale-invariant learning}},
-volume = {2},
-year = {2003}
+
+@inproceedings{Fergus2003,
+  title={Object class recognition by unsupervised scale-invariant learning},
+  author={Fergus, Robert and Perona, Pietro and Zisserman, Andrew},
+  booktitle={Computer Vision and Pattern Recognition, 2003. Proceedings. 2003 IEEE Computer Society Conference on},
+  volume={2},
+  pages={II--264},
+  year={2003},
+  organization={IEEE}
 }
+
 @book{Beck1999,
-abstract = {Kent Beck's eXtreme Programming eXplained provides an intriguing high-level overview of the author's Extreme Programming (XP) software development methodology. Written for IS managers, project leaders, or programmers, this guide provides a glimpse at the principles behind XP and its potential advantages for small- to mid-size software development teams. The book intends to describe what XP is, its guiding principles, and how it works. Simply written, the book avoids case studies and concrete details in demonstrating the efficacy of XP. Instead, it demonstrates how XP relies on simplicity, unit testing, programming in pairs, communal ownership of code, and customer input on software to motivate code improvement during the development process. As the author notes, these principles are not new, but when they're combined their synergy fosters a new and arguably better way to build and maintain software. Throughout the book, the author presents and explains these principles, such as "rapid feedback" and "play to win," which form the basis of XP. Generally speaking, XP changes the way programmers work. The book is good at delineating new roles for programmers and managers who Beck calls "coaches." The most striking characteristic of XP is that programmers work in pairs, and that testing is an intrinsic part of the coding process. In a later section, the author even shows where XP works and where it doesn't and offers suggestions for migrating teams and organizations over to the XP process. In the afterword, the author recounts the experiences that led him to develop and refine XP, an insightful section that should inspire any organization to adopt XP. This book serves as a useful introduction to the philosophy and practice of XP for the manager or programmer who wants a potentially better way to build software. -Richard Dragan Topics covered: Extreme Programming (XP) software methodology, principles, XP team roles, facilities design, testing, refactoring, the XP software lifecycle, and adopting XP. Software development projects can be fun, productive, and even daring. Yet they can consistently deliver value to a business and remain under control. Extreme Programming (XP) was conceived and developed to address the specific needs of software development conducted by small teams in the face of vague and changing requirements. This new lightweight methodology challenges many conventional tenets, including the long-held assumption that the cost of changing a piece of software necessarily rises dramatically over the course of time. XP recognizes that projects have to work to achieve this reduction in cost and exploit the savings once they have been earned. Fundamentals of XP include: Distinguishing between the decisions to be made by business interests and those to be made by project stakeholders. Writing unit tests before programming and keeping all of the tests running at all times. Integrating and testing the whole system-several times a day. Producing all software in pairs, two programmers at one screen. Starting projects with a simple design that constantly evolves to add needed flexibility and remove unneeded complexity. Putting a minimal system into production quickly and growing it in whatever directions prove most valuable. Why is XP so controversial? Some sacred cows don't make the cut in XP: Don't force team members to specialize and become analysts, architects, programmers, testers, and integrators-every XP programmer participates in all of these critical activities every day. Don't conduct complete up-front analysis and design-an XP project starts with a quick analysis of the entire system, and XP programmers continue to make analysis and design decisions throughout development. Develop infrastructure and frameworks as you develop your application, not up-front-delivering business value is the heartbeat that drives XP projects. Don't write and maintain implementation documentation-communication in XP projects occurs face-to-face, or through efficient tests and carefully written code. You may love XP or you may hate it, but Extreme Programming Explained will force you to take a fresh look at how you develop software.},
-author = {Beck, Kent},
-booktitle = {XP Series},
-doi = {10.1136/adc.2005.076794},
-isbn = {0201616416},
-issn = {20161641},
-pages = {224},
-title = {{Extreme Programming Explained: Embrace Change}},
-year = {1999}
+  title={Extreme Programming Explained: Embrace Change},
+  author={Beck, K. and Andres, C.},
+  isbn={9780134051994},
+  url={https://books.google.cl/books?id=-DNcBAAAQBAJ},
+  year={2004},
+  publisher={Pearson Education}
 }
-@incollection{Weber2000,
-abstract = {A method is presented to learn object class models from unlabeled and unsegmented cluttered scenes for the purpose of visual object recognition. The variability across a class of objects is modeled in a principled way, treating objects as flexible constellations of rigid parts (features). Variability is represented by a joint probability density function (pdf) on the shape of the constellation and the output of part detectors. Corresponding ``constellation models'' can be learned in a completely unsupervised fashion. In a first stage, the learning method automatically identifies distinctive parts in the training set by applying a clustering algorithm to patterns selected by an interest operator. It then learns the statistical shape model using expectation maximization. Mixtures of constellation models can be defined and applied to ``discover'' object categories in an unsupervised manner. The method achieves very good classification results on human faces, cars, leaves, handwritten letters, and cartoon characters.},
-author = {Weber, M and Welling, M and Perona, P},
-booktitle = {Computer Vision - ECCV 2000},
-doi = {10.1007/3-540-45054-8\_2},
-isbn = {978-3-540-67685-0},
-pages = {18--32},
-title = {{Unsupervised Learning of Models for Recognition}},
-url = {http://dx.doi.org/10.1007/3-540-45054-8\_2},
-volume = {1842},
-year = {2000}
+
+@book{Weber2000,
+  title={Unsupervised learning of models for recognition},
+  author={Weber, Markus and Welling, Max and Perona, Pietro},
+  year={2000},
+  publisher={Springer}
 }
+
 @misc{Rosebrock2014,
 author = {Rosebrock, Adrian},
 pages = {1},
@@ -414,73 +309,60 @@ url = {http://www.pyimagesearch.com/2014/11/17/non-maximum-suppression-object-de
 urldate = {22-12-2014},
 year = {2014}
 }
-@article{Leibe2005,
-author = {Leibe, B. and Seemann, E. and Schiele, B.},
-doi = {10.1109/CVPR.2005.272},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Leibe, Seemann, Schiele - 2005 - Pedestrian Detection in Crowded Scenes.pdf:pdf},
-isbn = {0-7695-2372-2},
-journal = {2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05)},
-pages = {878--885},
-publisher = {Ieee},
-title = {{Pedestrian Detection in Crowded Scenes}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1467359},
-volume = {1},
-year = {2005}
+
+@inproceedings{Leibe2005,
+  title={Pedestrian detection in crowded scenes},
+  author={Leibe, Bastian and Seemann, Edgar and Schiele, Bernt},
+  booktitle={Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on},
+  volume={1},
+  pages={878--885},
+  year={2005},
+  organization={IEEE}
 }
-@misc{Friedman2000,
-abstract = {Boosting is one of the most important recent developments in classification methodology. Boosting works by sequentially applying a classification algorithm to reweighted versions of the training data and then taking a weighted majority vote of the sequence of classifiers thus produced. For many classification algorithms, this simple strategy results in dramatic improvements in performance. We show that this seemingly mysterious phenomenon can be understood in terms of well-known statistical principles, namely additive modeling and maximum likelihood. For the two-class problem, boosting can be viewed as an approximation to additive modeling on the logistic scale using maximum Bernoulli likelihood as a criterion. We develop more direct approximations and show that they exhibit nearly identical results to boosting. Direct multiclass generalizations based on multinomial likelihood are derived that exhibit performance comparable to other recently proposed multiclass generalizations of boosting in most situations, and far superior in some. We suggest a minor modification to boosting that can reduce computation, often by factors of 10 to 50. Finally, we apply these insights to produce an alternative formulation of boosting decision trees. This approach, based on best-first truncated tree induction, often leads to better performance, and can provide interpretable descriptions of the aggregate decision rule. It is also much faster computationally, making it more suitable to large-scale data mining applications},
-author = {Friedman, Jerome and Hastie, Trevor and Tibshirani, Robert},
-booktitle = {Annals of Statistics},
-doi = {10.1214/aos/1016218223},
-isbn = {00905364},
-issn = {00905364},
-keywords = {Classification,Machine learning,Nonparametric estimation,Stagewise fitting,Tree},
-pages = {337--407},
-pmid = {2565644},
-title = {{Additive logistic regression: A statistical view of boosting}},
-volume = {28},
-year = {2000}
+
+@article{Friedman2000,
+  title={Additive logistic regression: a statistical view of boosting (with discussion and a rejoinder by the authors)},
+  author={Friedman, Jerome and Hastie, Trevor and Tibshirani, Robert and others},
+  journal={The annals of statistics},
+  volume={28},
+  number={2},
+  pages={337--407},
+  year={2000},
+  publisher={Institute of Mathematical Statistics}
 }
+
 @article{Belongie2002,
-abstract = {We present a novel approach to measuring similarity between shapes and exploit it for object recognition. In our framework, the measurement of similarity is preceded by 1) solving for correspondences between points on the two shapes, 2) using the correspondences to estimate an aligning transform. In order to solve the correspondence problem, we attach a descriptor, the shape context, to each point. The shape context at a reference point captures the distribution of the remaining points relative to it, thus offering a globally discriminative characterization. Corresponding points on two similar shapes will have similar shape contexts, enabling us to solve for correspondences as an optimal assignment problem. Given the point correspondences, we estimate the transformation that best aligns the two shapes; regularized thin-plate splines provide a flexible class of transformation maps for this purpose. The dissimilarity between the two shapes is computed as a sum of matching errors between corresponding points, together with a term measuring the magnitude of the aligning transform. We treat recognition in a nearest-neighbor classification framework as the problem of finding the stored prototype shape that is maximally similar to that in the image. Results are presented for silhouettes, trademarks, handwritten digits, and the COIL data set.},
-author = {Belongie, Serge and Malik, Jitendra and Puzicha, Jan},
-doi = {10.1.1.18.8852},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Belongie, Malik, Puzicha - 2002 - Shape Matching and Object Recognition Using Shape Contexts.pdf:pdf},
-isbn = {9781424455409},
-issn = {01628828},
-journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-pages = {509--522},
-pmid = {15376597},
-title = {{Shape Matching and Object Recognition Using Shape Contexts}},
-url = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.18.8852},
-volume = {24},
-year = {2002}
+  title={Shape matching and object recognition using shape contexts},
+  author={Belongie, Serge and Malik, Jitendra and Puzicha, Jan},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={24},
+  number={4},
+  pages={509--522},
+  year={2002},
+  publisher={IEEE}
 }
+
 @article{Bowmaker1980,
-abstract = {1. Microspectrophotometric measurements have been made of the photopigments of individual rods and cones from the retina of a man. The measuring beam was passed transversely through the isolated outer segments. 2. The mean absorbance spectrum for rods (n = 11) had a peak at 497.6 +/- 3.3 nm and the mean transverse absorbance was 0.035 +/- 0.007. 3. Three classes of cones were identified. The long-wave cones ('red' cones) had a lambda max of 562.8 +/- 4.7 nm (n = 19) with a mean transverse absorbance of 0.027 +/- 0.005. The middle-wave cones ('green' cones) had a lambda max of 533.8 +/- 3.7 nm (n = 11) with a mean transverse absorbance of 0.032 +/- 0.007. The short-wave cones ('blue' cones) had a lambda max of 420.3 +/- 4.7 nm (n = 3) with a mean transverse absorbance of 0.037 +/- 0.011. 4. If assumptions are made about the length of cones and about pre-receptoral absorption, it is possible to derive psychophysical sensitivities for the cones that closely resemble the appropriate pi mechanisms of W. S. Stiles. 5. If assumptions are made about the length of rods and about pre-receptoral absorption, however, the psychophysical sensitivity derived for the rods is considerably broader than the C.I.E. scotopic sensitivity function.},
-author = {Bowmaker, J K and Dartnall, H J},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Bowmaker, Dartnall - 1980 - Visual pigments of rods and cones in a human retina.pdf:pdf},
-isbn = {0022-3751 (Print)$\backslash$n0022-3751 (Linking)},
-issn = {0022-3751},
-journal = {The Journal of physiology},
-pages = {501--511},
-pmid = {7359434},
-title = {{Visual pigments of rods and cones in a human retina.}},
-volume = {298},
-year = {1980}
+  title={Visual pigments of rods and cones in a human retina.},
+  author={Bowmaker, JK and Dartnall, HJk},
+  journal={The Journal of physiology},
+  volume={298},
+  number={1},
+  pages={501--511},
+  year={1980},
+  publisher={Wiley Online Library}
 }
-@article{Nevatia2005,
-author = {Nevatia, R.},
-doi = {10.1109/ICCV.2005.74},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Nevatia - 2005 - Detection of multiple, partially occluded humans in a single image by Bayesian combination of edgelet part detectors.pdf:pdf},
-isbn = {0-7695-2334-X},
-journal = {Tenth IEEE International Conference on Computer Vision (ICCV'05) Volume 1},
-pages = {90--97 Vol. 1},
-publisher = {Ieee},
-title = {{Detection of multiple, partially occluded humans in a single image by Bayesian combination of edgelet part detectors}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1541243},
-year = {2005}
+
+@inproceedings{Nevatia2005,
+  title={Detection of multiple, partially occluded humans in a single image by bayesian combination of edgelet part detectors},
+  author={Wu, Bo and Nevatia, Ramakant},
+  booktitle={Computer Vision, 2005. ICCV 2005. Tenth IEEE International Conference on},
+  volume={1},
+  pages={90--97},
+  year={2005},
+  organization={IEEE}
 }
+
 @misc{Horst2006,
 author = {Horst, Frank},
 booktitle = {Wikimedia Commons},
@@ -488,129 +370,122 @@ title = {{Wikipedia - Archivo:Electromagnetic spectrum-es.svg}},
 url = {http://es.wikipedia.org/wiki/Archivo:Electromagnetic\_spectrum-es.svg},
 year = {2006}
 }
+
 @article{Felzenszwalb2009,
-abstract = {We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL datasets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin- sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI-SVM in terms of latent variables. A latent SVM is semi-convex and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function.},
-author = {Felzenszwalb, Pedro F and Girshick, Ross B and Mcallester, David and Ramanan, Deva},
-doi = {10.1109/TPAMI.2009.167},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Felzenszwalb et al. - 2009 - Object Detection with Discriminatively Trained Part Based Models.pdf:pdf},
-issn = {1939-3539},
-journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-pages = {1--20},
-pmid = {20634557},
-title = {{Object Detection with Discriminatively Trained Part Based Models}},
-year = {2009}
+  title={Object detection with discriminatively trained part-based models},
+  author={Felzenszwalb, Pedro F and Girshick, Ross B and McAllester, David and Ramanan, Deva},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={32},
+  number={9},
+  pages={1627--1645},
+  year={2010},
+  publisher={IEEE}
 }
-@article{Dollar2009a,
-abstract = {We study the performance of integral channel features for image classification tasks, focusing in particular on pedestrian detection. The general idea behind integral channel features is that multiple registered image channels are computed using linear and non-linear transformations of the input image, and then features such as local sums, histograms, and Haar features and their various generalizations are efficiently computed using integral images. Such features have been used in recent literature for a variety of tasks indeed, variations appear to have been invented independently multiple times. Although integral channel features have proven effective, little effort has been devoted to analyzing or optimizing the features themselves. In this work we present a unified view of the relevant work in this area and perform a detailed experimental evaluation. We demonstrate that when designed properly, integral channel features not only outperform other features including histogram of oriented gradient (HOG), they also (1) naturally integrate heterogeneous sources of information, (2) have few parameters and are insensitive to exact parameter settings, (3) allow for more accurate spatial localization during detection, and (4) result in fast detectors when coupled with cascade classifiers.},
-author = {Doll\'{a}r, Piotr and Tu, Zhuowen and Perona, Pietro and Belongie, Serge},
-doi = {10.5244/C.23.91},
-isbn = {1-901725-39-1},
-journal = {BMVC 2009 London England},
-pages = {1--11},
-title = {{Integral Channel Features}},
-url = {http://www.loni.ucla.edu/~ztu/publication/dollarBMVC09ChnFtrs\_0.pdf},
-year = {2009}
+
+@inproceedings{Dollar2009a,
+  title={Integral Channel Features.},
+  author={Doll{\'a}r, Piotr and Tu, Zhuowen and Perona, Pietro and Belongie, Serge},
+  booktitle={BMVC},
+  volume={2},
+  number={3},
+  pages={5},
+  year={2009}
 }
-@inproceedings{Bay2006,
-abstract = {In this paper, we present a novel scale- and rotation-invariant interest point detector and descriptor, coined SURF (Speeded Up Robust Features). It approximates or even outperforms previously proposed schemes with respect to repeatability, distinctiveness, and robustness, yet can be computed and compared much faster. This is achieved by relying on integral images for image convolutions; by building on the strengths of the leading existing detectors and descriptors (in casu, using a Hessian matrix-based measure for the detector, and a distribution-based descriptor); and by simplifying these methods to the essential. This leads to a combination of novel detection, description, and matching steps. The paper presents experimental results on a standard evaluation set, as well as on imagery obtained in the context of a real-life object recognition application. Both show SURF’s strong performance.},
-author = {Bay, Herbert and Tuytelaars, Tinne and {Van Gool}, Luc},
-booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
-doi = {10.1007/11744023\_32},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Bay, Tuytelaars, Van Gool - 2006 - SURF Speeded up robust features.pdf:pdf},
-isbn = {3540338322},
-issn = {03029743},
-pages = {404--417},
-pmid = {16081019},
-title = {{SURF: Speeded up robust features}},
-volume = {3951 LNCS},
-year = {2006}
+
+@incollection{Bay2006,
+  title={Surf: Speeded up robust features},
+  author={Bay, Herbert and Tuytelaars, Tinne and Van Gool, Luc},
+  booktitle={Computer vision--ECCV 2006},
+  pages={404--417},
+  year={2006},
+  publisher={Springer}
 }
-@article{Sigal2003,
-abstract = {:  - Models Using Non-parametric Belief Propagation (2003) (Make Corrections) (4 citations) Leonid Sigal, Michael Isard },
-author = {Sigal, Leonid and Sigelman, Benjamin H. and Isard, Michael and Black, Michael J.},
-journal = {Advances in Neural Information Processing Systems},
-pages = {1539--1546},
-title = {{Attractive People : Assembling Loose-Limbed Models using Non-parametric Belief Propagation}},
-volume = {16},
-year = {2003}
+
+@inproceedings{Sigal2003,
+  title={Attractive people: Assembling loose-limbed models using non-parametric belief propagation},
+  author={Sigal, Leonid and Isard, Michael and Sigelman, Benjamin H and Black, Michael J},
+  booktitle={Advances in neural information processing systems},
+  pages={None},
+  year={2003}
 }
-@article{Yu2011,
-author = {Yu, Chenglong and Wang, Xuan},
-doi = {10.1109/ICMLC.2011.6016960},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Yu, Wang - 2011 - Pedestrian detection based on combinational holistic and partial features.pdf:pdf},
-isbn = {978-1-4577-0305-8},
-journal = {2011 International Conference on Machine Learning and Cybernetics},
-keywords = {-component,5,and experiment result shows,classifying points,ected riemannian manifold using,et al,etry of the space,formatting,lying on a co,propose a approach for,style,styling,that good,the geom,tuzel},
-month = jul,
-pages = {1938--1942},
-publisher = {Ieee},
-title = {{Pedestrian detection based on combinational holistic and partial features}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6016960},
-year = {2011}
+
+@inproceedings{Yu2011,
+  title={Pedestrian detection based on combinational holistic and partial features},
+  author={Yu, Chenglong and Wang, Xuan},
+  booktitle={Machine Learning and Cybernetics (ICMLC), 2011 International Conference on},
+  volume={4},
+  pages={1938--1942},
+  year={2011},
+  organization={IEEE}
 }
+
 @misc{xpforone2006,
 author = {{Extreme Programming For One}, Web},
 title = {{Extreme Programming For One}},
 url = {http://c2.com/xp/ExtremeProgrammingForOne.html},
 year = {2006}
 }
+
 @article{Chang2011,
-abstract = {LIBSVM is a library for Support Vector Machines (SVMs). We have been actively developing this package since the year 2000. The goal is to help users to easily apply SVM to their applications. LIBSVM has gained wide popularity in machine learning and many other areas. In this article, we present all implementation details of LIBSVM. Issues such as solving SVM optimization problems theoretical convergence multiclass classification probability estimates and parameter selection are discussed in detail.},
-author = {Chang, Chih-Chung and Lin, Chih-Jen},
-doi = {10.1145/1961189.1961199},
-isbn = {2157-6904},
-issn = {21576904},
-journal = {ACM Transactions on Intelligent Systems and Technology},
-keywords = {SVC,SVM,SVR,libSVM,support vector classification,support vector machine,support vector regression},
-pages = {27:1----27:27},
-title = {{LIBSVM: A Library for Support Vector Machines}},
-url = {http://dl.acm.org/citation.cfm?doid=1961189.1961199},
-volume = {2},
-year = {2011}
+  title={LIBSVM: a library for support vector machines},
+  author={Chang, Chih-Chung and Lin, Chih-Jen},
+  journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
+  volume={2},
+  number={3},
+  pages={27},
+  year={2011},
+  publisher={ACM}
 }
+
 @article{Pavani2010,
-abstract = {This article proposes an extension of Haar-like features for their use in rapid object detection systems. These features differ from the traditional ones in that their rectangles are assigned optimal weights so as to maximize their ability to discriminate objects from clutter (non-objects). These features maintain the simplicity of evaluation of the traditional formulation while being more discriminative. The proposed features were trained to detect two types of objects: human frontal faces and human heart regions. Our experimental results suggest that the object detectors based on the proposed features are more accurate and faster than the object detectors built with traditional Haar-like features. ?? 2009 Elsevier Ltd. All rights reserved.},
-author = {Pavani, Sri Kaushik and Delgado, David and Frangi, Alejandro F.},
-doi = {10.1016/j.patcog.2009.05.011},
-isbn = {0031-3203},
-issn = {00313203},
-journal = {Pattern Recognition},
-keywords = {Cascaded classifiers,Genetic algorithms,Haar-like features,Object detection,Pattern rejection},
-pages = {160--172},
-title = {{Haar-like features with optimally weighted rectangles for rapid object detection}},
-volume = {43},
-year = {2010}
+  title={Haar-like features with optimally weighted rectangles for rapid object detection},
+  author={Pavani, Sri-Kaushik and Delgado, David and Frangi, Alejandro F},
+  journal={Pattern Recognition},
+  volume={43},
+  number={1},
+  pages={160--172},
+  year={2010},
+  publisher={Elsevier}
 }
+
 @article{Lin2000,
-author = {Lin, Hsuan-tien and Lin, Chih-jen},
-file = {:home/dquinteros/Dropbox/Tesis/Referencias/paper\_propabilities\_Lin\_.pdf:pdf},
-keywords = {posterior probability,support vector machine},
-pages = {1--12},
-title = {{A Note on Platt ’ s Probabilistic Outputs for Support Vector Machines}},
-year = {2000}
+  title={A note on Platt’s probabilistic outputs for support vector machines},
+  author={Lin, Hsuan-Tien and Lin, Chih-Jen and Weng, Ruby C},
+  journal={Machine learning},
+  volume={68},
+  number={3},
+  pages={267--276},
+  year={2007},
+  publisher={Springer}
 }
+
 @article{Kundu,
-author = {Kundu, Debasis and Gupta, Rameshwar D},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kundu, Gupta - Unknown - Bivariate Generalized Exponential Distribution.pdf:pdf},
-keywords = {conditional probability density function,em algorithm,fisher information matrix,joint probability density function,maximum likelihood estimators},
-number = {91},
-pages = {1--25},
-title = {{Bivariate Generalized Exponential Distribution}}
+  title={Bivariate generalized exponential distribution},
+  author={Kundu, Debasis and Gupta, Rameshwar D},
+  journal={Journal of multivariate analysis},
+  volume={100},
+  number={4},
+  pages={581--593},
+  year={2009},
+  publisher={Elsevier}
 }
+
 @phdthesis{FernandezSarria2007a,
-author = {{Fern\'{a}ndez Sarr\'{\i}a}, Alfonso},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Fern\'{a}ndez Sarr\'{\i}a - 2007 - Estudio de t\'{e}cnicas basadas en la transformada wavelet y optimizaci\'{o}n de sus par\'{a}metros para la clasifi.pdf:pdf},
-pages = {247},
-school = {Universidad Politecnica de Valencia},
-title = {{Estudio de t\'{e}cnicas basadas en la transformada wavelet y optimizaci\'{o}n de sus par\'{a}metros para la clasificaci\'{o}n por texturas de im\'{a}genes digitales}},
-url = {riunet.upv.es/bitstream/handle/10251/1955/tesisUPV2573.pdf},
-year = {2007}
+  title={Estudio de t{\'e}cnicas basadas en la transformada Wavelet y optimizaci{\'o}n de sus par{\'a}metros para la clasificaci{\'o}n por texturas de im{\'a}genes digitales},
+  author={Sarr{\'\i}a, Alfonso Fern{\'a}ndez},
+  year={2007},
+  school={Universitat Polit{\`e}cnica de Val{\`e}ncia}
 }
+
 @book{Britannica1994,
-author = {Britannica, Encyclopedia},
-title = {{Encyclopedia Britannica}},
-year = {1994}
+  title={Encyclopedia britannica},
+  author={Encyclopedia Britannica},
+  isbn={9780852297872},
+  lccn={2001089897},
+  year={1994},
+  publisher={Encyclopedia Britannica}
 }
+
 @book{Hartley2003,
 author = {Hartley, Richard and Zisserman, Andrew},
 file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Hartley, Zisserman - 2003 - Multiple view Geometry in computer vision.pdf:pdf},
@@ -619,38 +494,36 @@ title = {{Multiple view Geometry in computer vision}},
 url = {http://books.google.com/books?hl=en\&lr=\&id=si3R3Pfa98QC\&oi=fnd\&pg=PR11\&dq=Multiple+view+Geometry+in+computer+vision\&ots=aRp4kq7f5L\&sig=Ez6vE3yjRrXGq5kzarsJkFE9AxY},
 year = {2003}
 }
-@article{Vidal-Naquet2003,
-abstract = {We show that efficient object recognition can be obtained by combining informative features with linear classification. The results demonstrate the superiority of informative class-specific features, as compared with generic type features such as wavelets, for the task of object recognition. We show that information rich features can reach optimal performance with simple linear separation rules, while generic feature based classifiers require more complex classification schemes. This is significant because efficient and optimal methods have been developed for spaces that allow linear separation. To compare different strategies for feature extraction, we trained and compared classifiers working in feature spaces of the same low dimensionality, using two feature types (image fragments vs. wavelets) and two classification rules (linear hyperplane and a Bayesian network). The results show that by maximizing the individual information of the features, it is possible to obtain efficient classification by a simple linear separating rule, as well as more efficient learning.},
-author = {Vidal-Naquet, M. and Ullman, S.},
-doi = {10.1109/ICCV.2003.1238356},
-isbn = {0-7695-1950-4},
-journal = {Proceedings Ninth IEEE International Conference on Computer Vision},
-title = {{Object recognition with informative features and linear classification}},
-year = {2003}
+
+@inproceedings{Vidal-Naquet2003,
+  title={Object Recognition with Informative Features and Linear Classification.},
+  author={Vidal-Naquet, Michel and Ullman, Shimon},
+  booktitle={ICCV},
+  volume={3},
+  pages={281},
+  year={2003}
 }
-@misc{Zhu2006,
-abstract = {We integrate the cascade-of-rejectors approach with the Histograms of Oriented Gradients (HoG) features to achieve a fast and accurate human detection system. The features used in our system are HoGs of variable-size blocks that capture salient features of humans automatically. Using AdaBoost for feature selection, we identify the appropriate set of blocks, from a large set of possible blocks. In our system, we use the integral image representation and a rejection cascade which significantly speed up the computation. For a 320 \&215; 280 image, the system can process 5 to 30 frames per second depending on the density in which we scan the image, while maintaining an accuracy level similar to existing methods.},
-author = {Zhu, Qiang and Avidan, S and Yeh, Mei Chen and Cheng, Kwang Ting},
-booktitle = {IEEE Conference on Computer Vision and Pattern Recognition},
-doi = {10.1109/CVPR.2006.119},
-isbn = {0769525970},
-issn = {10636919},
-pages = {1491--1498},
-title = {{Fast Human Detection Using a Cascade of Histograms of Oriented Gradients}},
-volume = {2},
-year = {2006}
+
+@inproceedings{Zhu2006,
+  title={Fast human detection using a cascade of histograms of oriented gradients},
+  author={Zhu, Qiang and Yeh, M-C and Cheng, Kwang-Ting and Avidan, Shai},
+  booktitle={Computer Vision and Pattern Recognition, 2006 IEEE Computer Society Conference on},
+  volume={2},
+  pages={1491--1498},
+  year={2006},
+  organization={IEEE}
 }
+
 @inproceedings{Dalal2005,
-abstract = {We study the question of feature sets$\backslash$nfor robust visual object recognition;$\backslash$nadopting linear SVM based human detection as a test case. After reviewing$\backslash$nexisting edge and gradient based descriptors,$\backslash$nwe show experimentally that grids of$\backslash$nhistograms of$\backslash$noriented gradient$\backslash$n(HOG) descriptors significantly outperform existing feature sets$\backslash$nfor human$\backslash$ndetection. We study the influence of each stage of$\backslash$nthe computation on performance, concluding that fine-scale gradients, fine orientation binning, relatively$\backslash$ncoarse spatial binning, and high-quality local contrast normalization$\backslash$nin overlapping descriptor blocks are all important for$\backslash$ngood results. The new approach gives near-perfect separation on the$\backslash$noriginal MIT pedestrian database, so we introduce a more challenging$\backslash$ndataset containing over 1800 annotated human$\backslash$nimages with a large range of pose variations$\backslash$nand backgrounds.},
-author = {Dalal, N and Triggs, B},
-booktitle = {Proc. IEEE Computer Society Conf. Computer Vision and Pattern Recognition CVPR 2005},
-doi = {10.1109/CVPR.2005.177},
-file = {:home/dquinteros/Dropbox/Tesis/Referencias/paper\_hog\_dalal.pdf:pdf},
-pages = {886--893},
-title = {{Histograms of oriented gradients for human detection}},
-volume = {1},
-year = {2005}
+  title={Histograms of oriented gradients for human detection},
+  author={Dalal, Navneet and Triggs, Bill},
+  booktitle={Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on},
+  volume={1},
+  pages={886--893},
+  year={2005},
+  organization={IEEE}
 }
+
 @misc{matlab2014,
 author = {{The MathWorks}, Inc.},
 booktitle = {mathworks.com},
@@ -663,159 +536,131 @@ urldate = {10-12-2014},
 volume = {49},
 year = {2014}
 }
+
 @article{Mikolajczyk2005,
-abstract = {In this paper, we compare the performance of descriptors computed for local interest regions, as, for example, extracted by the Harris-Affine detector. Many different descriptors have been proposed in the literature. It is unclear which descriptors are more appropriate and how their performance depends on the interest region detector. The descriptors should be distinctive and at the same time robust to changes in viewing conditions as well as to errors of the detector. Our evaluation uses as criterion recall with respect to precision and is carried out for different image transformations. We compare shape context, steerable filters, PCA-SIFT, differential invariants, spin images, SIFT, complex filters, moment invariants, and cross-correlation for different types of interest regions. We also propose an extension of the SIFT descriptor and show that it outperforms the original method. Furthermore, we observe that the ranking of the descriptors is mostly independent of the interest region detector and that the SIFT-based descriptors perform best. Moments and steerable filters show the best performance among the low dimensional descriptors.},
-author = {Mikolajczyk, Krystian and Schmid, Cordelia},
-doi = {10.1109/TPAMI.2005.188},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Mikolajczyk, Schmid - 2005 - Performance evaluation of local descriptors.pdf:pdf},
-isbn = {0162-8828},
-issn = {0162-8828},
-journal = {IEEE transactions on pattern analysis and machine intelligence},
-pages = {1615--1630},
-pmid = {16237996},
-title = {{Performance evaluation of local descriptors.}},
-volume = {27},
-year = {2005}
+  title={A performance evaluation of local descriptors},
+  author={Mikolajczyk, Krystian and Schmid, Cordelia},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={27},
+  number={10},
+  pages={1615--1630},
+  year={2005},
+  publisher={IEEE}
 }
-@inproceedings{Ronfard2002,
-abstract = {Detecting people in images is a key problem for video indexing, browsing and retrieval. The main difficulties are the large appearance variations caused by action, clothing, illumination, viewpoint and scale. Our goal is to find people in static video frames using learned models of both the appearance of body parts (head, limbs, hands), and of the geometry of their assemblies. We build on Forsyth \&amp; Fleck’s general ‘body plan’ methodology and Felzenszwalb \&amp; Huttenlocher’s dynamic programming approach for efficiently assembling candidate parts into ‘pictorial structures’. However we replace the rather simple part detectors used in these works with dedicated detectors learned for each body part using Support Vector Machines (SVMs) or Relevance Vector Machines (RVMs). We are not aware of any previous work using SVMs to learn articulated body plans, however they have been used to detect both whole pedestrians and combinations of rigidly positioned subimages (typically, upper body, arms, and legs) in street scenes, under a wide range of illumination, pose and clothing variations. RVMs are SVM-like classifiers that offer a well-founded probabilistic interpretation and improved sparsity for reduced computation. We demonstrate their benefits experimentally in a series of results showing great promise for learning detectors in more general situations.},
-author = {Ronfard, Remi and Schmid, Cordelia and Triggs, Bill},
-booktitle = {ECCV},
-doi = {10.1007/3-540-47979-1},
-isbn = {978-3-540-43748-2},
-pages = {700--714},
-title = {{Learning to parse pictures of people}},
-url = {http://www.springerlink.com/content/nx7njmr1073prh0b/},
-volume = {2353},
-year = {2002}
+
+@incollection{Ronfard2002,
+  title={Learning to parse pictures of people},
+  author={Ronfard, R{\'e}mi and Schmid, Cordelia and Triggs, Bill},
+  booktitle={Computer Vision—ECCV 2002},
+  pages={700--714},
+  year={2002},
+  publisher={Springer}
 }
+
 @article{Lowe2004,
-abstract = {This paper presents a method for extracting distinctive invariant features from images that can be used to perform reliable matching between different views of an object or scene. The features are invariant to image scale and rotation, and are shown to provide robust matching across a substantial range of affine distortion, change in 3D viewpoint, addition of noise, and change in illumination. The features are highly distinctive, in the sense that a single feature can be correctly matched with high probability against a large database of features from many images. This paper also describes an approach to using these features for object recognition. The recognition proceeds by matching individual features to a database of features from known objects using a fast nearest-neighbor algorithm, followed by a Hough transform to identify clusters belonging to a single object, and finally performing verification through least-squares solution for consistent pose parameters. This approach to recognition can robustly identify objects among clutter and occlusion while achieving near real-time performance.},
-author = {Lowe, David G.},
-doi = {10.1023/B:VISI.0000029664.99615.94},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Lowe - 2004 - Distinctive image features from scale-invariant keypoints.pdf:pdf},
-isbn = {1568811012},
-issn = {09205691},
-journal = {International Journal of Computer Vision},
-keywords = {Image matching,Invariant features,Object recognition,Scale invariance},
-pages = {91--110},
-pmid = {20064111},
-title = {{Distinctive image features from scale-invariant keypoints}},
-volume = {60},
-year = {2004}
+  title={Distinctive image features from scale-invariant keypoints},
+  author={Lowe, David G},
+  journal={International journal of computer vision},
+  volume={60},
+  number={2},
+  pages={91--110},
+  year={2004},
+  publisher={Springer}
 }
+
 @article{Lindeberg1998,
-abstract = {The fact that objects in the world appear in different ways depending on the scale of observation has important implications if one aims at describing them. It shows that the notion of scale is of utmost importance when processing unknown measurement data by automatic methods. In their seminal works, Witkin (1983) and Koenderink (1984) proposed to approach this problem by representing image structures at different scales in a so-called scale-space representation. Traditional scale-space theory building on this work, however, does not address the problem of how to select local appropriate scales for further analysis. This article proposes a systematic methodology for dealing with this problem. A framework is presented for generating hypotheses about interesting scale levels in image data, based on a general principle stating that local extrema over scales of different combinations of ?-normalized derivatives are likely candidates to correspond to interesting structures. Specifically, it is shown how this idea can be used as a major mechanism in algorithms for automatic scale selection, which adapt the local scales of processing to the local image structure.},
-author = {Lindeberg, Tony},
-doi = {10.1023/A:1008045108935},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Lindeberg - 1998 - Feature Detection with Automatic Scale Selection.pdf:pdf},
-isbn = {0818672587},
-issn = {09205691},
-journal = {International Journal of Computer Vision},
-keywords = {blob detection,computer vision,corner detection,feature detection,fre-,gaussian derivative,multi-scale representation,normalized derivative,quency estimation,scale,scale selection,scale-space},
-pages = {79 -- 116},
-title = {{Feature Detection with Automatic Scale Selection}},
-url = {http://www.springerlink.com/content/u624470167857570},
-volume = {30},
-year = {1998}
+  title={Feature detection with automatic scale selection},
+  author={Lindeberg, Tony},
+  journal={International journal of computer vision},
+  volume={30},
+  number={2},
+  pages={79--116},
+  year={1998},
+  publisher={Springer}
 }
+
 @article{Dollar2012,
-abstract = {Pedestrian detection is a key problem in computer vision, with several applications that have the potential to positively impact quality of life. In recent years, the number of approaches to detecting pedestrians in monocular images has grown steadily. However, multiple data sets and widely varying evaluation protocols are used, making direct comparisons difficult. To address these shortcomings, we perform an extensive evaluation of the state of the art in a unified framework. We make three primary contributions: 1) We put together a large, well-annotated, and realistic monocular pedestrian detection data set and study the statistics of the size, position, and occlusion patterns of pedestrians in urban scenes, 2) we propose a refined per-frame evaluation methodology that allows us to carry out probing and informative comparisons, including measuring performance in relation to scale and occlusion, and 3) we evaluate the performance of sixteen pretrained state-of-the-art detectors across six data sets. Our study allows us to assess the state of the art and provides a framework for gauging future efforts. Our experiments show that despite significant progress, performance still has much room for improvement. In particular, detection is disappointing at low resolutions and for partially occluded pedestrians.},
-author = {Doll\'{a}r, Piotr and Wojek, Christian and Schiele, Bernt and Perona, Pietro},
-doi = {10.1109/TPAMI.2011.155},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Doll\'{a}r et al. - 2012 - Pedestrian detection an evaluation of the state of the art.pdf:pdf},
-issn = {1939-3539},
-journal = {IEEE transactions on pattern analysis and machine intelligence},
-keywords = {Automatic Data Processing,Humans,Image Enhancement,Image Enhancement: methods,Image Interpretation, Computer-Assisted,Image Interpretation, Computer-Assisted: methods,Pattern Recognition, Automated,Pattern Recognition, Automated: methods,Sensitivity and Specificity},
-month = apr,
-number = {4},
-pages = {743--61},
-pmid = {21808091},
-title = {{Pedestrian detection: an evaluation of the state of the art.}},
-url = {http://www.ncbi.nlm.nih.gov/pubmed/21808091},
-volume = {34},
-year = {2012}
+  title={Pedestrian detection: An evaluation of the state of the art},
+  author={Dollar, Piotr and Wojek, Christian and Schiele, Bernt and Perona, Pietro},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={34},
+  number={4},
+  pages={743--761},
+  year={2012},
+  publisher={IEEE}
 }
-@article{Ramanan2003,
-abstract = { We describe a tracker that can track moving people in long sequences without manual initialization. Moving people are modeled with the assumption that, while configuration can vary quite substantially from frame to frame, appearance does not. This leads to an algorithm that firstly builds a model of the appearance of the body of each individual by clustering candidate body segments, and then uses this model to find all individuals in each frame. Unusually, the tracker does not rely on a model of human dynamics to identify possible instances of people; such models are unreliable, because human motion is fast and large accelerations are common. We show our tracking algorithm can be interpreted as a loopy inference procedure on an underlying Bayes net. Experiments on video of real scenes demonstrate that this tracker can (a) count distinct individuals; (b) identify and track them; (c) recover when it loses track, for example, if individuals are occluded or briefly leave the view; (d) identify the configuration of the body largely correctly; and (e) is not dependent on particular models of human motion.},
-author = {Ramanan, D. and Forsyth, D.A.},
-doi = {10.1109/CVPR.2003.1211504},
-isbn = {0-7695-1900-8},
-issn = {1063-6919},
-journal = {2003 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2003. Proceedings.},
-title = {{Finding and tracking people from the bottom up}},
-volume = {2},
-year = {2003}
+
+@inproceedings{Ramanan2003,
+  title={Finding and tracking people from the bottom up},
+  author={Ramanan, Deva and Forsyth, David A},
+  booktitle={Computer Vision and Pattern Recognition, 2003. Proceedings. 2003 IEEE Computer Society Conference on},
+  volume={2},
+  pages={II--467},
+  year={2003},
+  organization={IEEE}
 }
-@misc{Schapire,
-author = {Schapire, Robert E.},
-title = {{Explaining Adaboost}},
-url = {https://www.cs.princeton.edu/~schapire/papers/explaining-adaboost.pdf}
+
+@incollection{Schapire,
+  title={Explaining adaboost},
+  author={Schapire, Robert E},
+  booktitle={Empirical inference},
+  pages={37--52},
+  year={2013},
+  publisher={Springer}
 }
-@article{Harris1988,
-abstract = {Consistency of image edge filtering is of prime importance for 3D interpretation of image sequences using feature tracking algorithms. To cater for image regions containing texture and isolated features, a combined corner and edge detector based on the local auto-correlation function is utilised, and it is shown to perform with good consistency on natural imagery.},
-author = {Harris, C. and Stephens, M.},
-doi = {10.5244/C.2.23},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Harris, Stephens - 1988 - A Combined Corner and Edge Detector.pdf:pdf},
-issn = {09639292},
-journal = {Procedings of the Alvey Vision Conference 1988},
-pages = {147--151},
-pmid = {20130988},
-title = {{A Combined Corner and Edge Detector}},
-url = {http://www.bmva.org/bmvc/1988/avc-88-023.html},
-year = {1988}
+
+@inproceedings{Harris1988,
+  title={A combined corner and edge detector.},
+  author={Harris, Chris and Stephens, Mike},
+  booktitle={Alvey vision conference},
+  volume={15},
+  pages={50},
+  year={1988},
+  organization={Manchester, UK}
 }
-@article{Viola2001,
-abstract = {This paper describes a machine learning approach for visual object detection which is capable of processing images extremely rapidly and achieving high detection rates. This work is distinguished by three key contributions. The first is the introduction of a new image representation called the "integral image" which allows the features used by our detector to be computed very quickly. The second is a learning algorithm, based on AdaBoost, which selects a small number of critical visual features from a larger set and yields extremely efficient classifiers. The third contribution is a method for combining increasingly more complex classifiers in a "cascade" which allows background regions of the image to be quickly discarded while spending more computation on promising object-like regions. The cascade can be viewed as an object specific focus-of-attention mechanism which unlike previous approaches provides statistical guarantees that discarded regions are unlikely to contain the object of interest. In the domain of face detection the system yields detection rates comparable to the best previous systems. Used in real-time applications, the detector runs at 15 frames per second without resorting to image differencing or skin color detection.},
-author = {Viola, P. and Jones, M.},
-doi = {10.1109/CVPR.2001.990517},
-isbn = {0-7695-1272-0},
-issn = {1063-6919},
-journal = {Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001},
-pmid = {7143246},
-title = {{Rapid object detection using a boosted cascade of simple features}},
-volume = {1},
-year = {2001}
+
+@inproceedings{Viola2001,
+  title={Rapid object detection using a boosted cascade of simple features},
+  author={Viola, Paul and Jones, Michael},
+  booktitle={Computer Vision and Pattern Recognition, 2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on},
+  volume={1},
+  pages={I--511},
+  year={2001},
+  organization={IEEE}
 }
-@article{Chen2012,
-author = {Chen, Zezhi},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Chen - 2012 - Detection , Tracking and Classification of Vehicles in Urban Environments Kingston University London.pdf:pdf},
-number = {June},
-title = {{Detection , Tracking and Classification of Vehicles in Urban Environments Kingston University London}},
-year = {2012}
+
+@phdthesis{Chen2012,
+  title={Detection, tracking and classification of vehicles in urban environments},
+  author={Chen, Zezhi},
+  year={2012},
+  school={Kingston University}
 }
+
 @book{KennethR.1996,
-abstract = {This broad introduction to the fundamental concepts of digital imaging shows how the various techniques can be applied to solve real-world problems (e.g., in biology, astronomy, forensics, etc.). It helps readers develop the insight required to use the tools of digital imaging to solve new problems. Discusses color, image compression, user interfaces, software development project management, 2-D graphs of Fourier Transforms, analysis of digital imaging systems performance, optics, pattern recognition, image recording and display, CCD cameras.},
-author = {Castleman, Kenneth R.},
-booktitle = {US Patent 6,240,217},
-title = {{Digital image processing}},
-url = {http://www.google.com/patents?hl=en\&lr=\&vid=USPAT6240217\&id=-swIAAAAEBAJ\&oi=fnd\&dq=Digital+Image+Processing\&printsec=abstract},
-year = {1996}
+  title={Digital Image Processing},
+  author={Castleman, K.R.},
+  isbn={9780133685985},
+  url={https://books.google.cl/books?id=jG0dAQAACAAJ},
+  year={1996},
+  publisher={Pearson Education Canada}
 }
-@article{Zheng2012,
-author = {Zheng, Gang and Chen, Youbin},
-doi = {10.1109/GHTCE.2012.6490122},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Zheng, Chen - 2012 - A review on vision-based pedestrian detection.pdf:pdf},
-isbn = {978-1-4673-5085-3},
-journal = {2012 IEEE Global High Tech Congress on Electronics},
-keywords = {-static pedestrian detection,detection,detection and feature-classifier-based classifier,divided into model-based pedestrian,dynamic pedestrian,pedestrian database,the former is further,training classifiers,which is the},
-month = nov,
-pages = {49--54},
-publisher = {Ieee},
-title = {{A review on vision-based pedestrian detection}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6490122},
-year = {2012}
+
+@inproceedings{Zheng2012,
+  title={A review on vision-based pedestrian detection},
+  author={Zheng, Gang and Chen, Youbin},
+  booktitle={Global High Tech Congress on Electronics (GHTCE), 2012 IEEE},
+  pages={49--54},
+  year={2012},
+  organization={IEEE}
 }
+
 @inproceedings{Maji2008,
-abstract = {Straightforward classification using kernelized SVMs requires evaluating the kernel for a test vector and each of the support vectors. For a class of kernels we show that one can do this much more efficiently. In particular we show that one can build histogram intersection kernel SVMs (IKSVMs) with runtime complexity of the classifier logarithmic in the number of support vectors as opposed to linear for the standard approach. We further show that by precomputing auxiliary tables we can construct an approximate classifier with constant runtime and space requirements, independent of the number of support vectors, with negligible loss in classification accuracy on various tasks. This approximation also applies to 1 - chi2 and other kernels of similar form. We also introduce novel features based on a multi-level histograms of oriented edge energy and present experiments on various detection datasets. On the INRIA pedestrian dataset an approximate IKSVM classifier based on these features has the current best performance, with a miss rate 13\% lower at 10-6 False Positive Per Window than the linear SVM detector of Dalal \&amp; Triggs. On the Daimler Chrysler pedestrian dataset IKSVM gives comparable accuracy to the best results (based on quadratic SVM), while being 15times faster. In these experiments our approximate IKSVM is up to 2000times faster than a standard implementation and requires 200times less memory. Finally we show that a 50times speedup is possible using approximate IKSVM based on spatial pyramid features on the Caltech 101 dataset with negligible loss of accuracy.},
-author = {Maji, Subhransu and Berg, Alexander C. and Maliks, Jitendra},
-booktitle = {26th IEEE Conference on Computer Vision and Pattern Recognition, CVPR},
-doi = {10.1109/CVPR.2008.4587630},
-file = {:home/dquinteros/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Maji, Berg, Maliks - 2008 - Classification using intersection kernel support vector machines is efficient.pdf:pdf},
-isbn = {9781424422432},
-issn = {1063-6919},
-title = {{Classification using intersection kernel support vector machines is efficient}},
-year = {2008}
+  title={Classification using intersection kernel support vector machines is efficient},
+  author={Maji, Subhransu and Berg, Alexander C and Malik, Jitendra},
+  booktitle={Computer Vision and Pattern Recognition, 2008. CVPR 2008. IEEE Conference on},
+  pages={1--8},
+  year={2008},
+  organization={IEEE}
 }
 
 @book{bellman1961adaptive,
@@ -828,3 +673,60 @@ year = {2008}
   publisher={Princeton University Press}
 }
 
+@article{dempster1977maximum,
+  title={Maximum likelihood from incomplete data via the EM algorithm},
+  author={Dempster, Arthur P and Laird, Nan M and Rubin, Donald B},
+  journal={Journal of the royal statistical society. Series B (methodological)},
+  pages={1--38},
+  year={1977},
+  publisher={JSTOR}
+}
+
+@inproceedings{lowe1999object,
+  title={Object recognition from local scale-invariant features},
+  author={Lowe, David G},
+  booktitle={Computer vision, 1999. The proceedings of the seventh IEEE international conference on},
+  volume={2},
+  pages={1150--1157},
+  year={1999},
+  organization={IEEE}
+}
+
+@techreport{joachims1999making,
+  title={Making large scale SVM learning practical},
+  author={Joachims, Thorsten},
+  year={1999},
+  institution={Universit{\"a}t Dortmund}
+}
+
+@book{tejedor1999análisis,
+  title={An{\'a}lisis de varianza: introducci{\'o}n conceptual y dise{\~n}os b{\'a}sicos},
+  author={Tejedor, F.J.T.},
+  isbn={9788476353882},
+  series={Cuadernos de estad{\'\i}stica},
+  url={https://books.google.cl/books?id=qETlAAAACAAJ},
+  year={1999},
+  publisher={La Muralla}
+}
+
+@article{seco2010analisis,
+  title={An{\'a}lisis de medidas repetidas usando m{\'e}todos de remuestreo},
+  author={Seco, Guillermo Vallejo and Fern{\'a}ndez, M Paula and Herrero, Elli{\'a}n Tuero and Rojas, Pablo Esteban Livacic},
+  journal={anales de psicolog{\'\i}a},
+  volume={26},
+  number={2},
+  pages={400--409},
+  year={2010},
+  publisher={Servicio de Publicaciones}
+}
+
+@article{vallejo2005comparison,
+  title={Comparison of two procedures for analyzing small sets of repeated measures data},
+  author={Vallejo, Guillermo and Livacic-Rojas, Pablo},
+  journal={Multivariate Behavioral Research},
+  volume={40},
+  number={2},
+  pages={179--205},
+  year={2005},
+  publisher={Taylor \& Francis}
+}

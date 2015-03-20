@@ -5,15 +5,15 @@
 \chapter{Proceso de evaluación}
 \label{cap:eval}
 
-En los capítulos anteriores se revisó el funcionamiento tanto del proceso de extracción de características como del proceso de clasificación. El paso siguiente corresponde al proceso a través del cual se realizó la evaluación de la sensibilidad espacial. A continuación se muestra el proceso de evaluación general y los resultados obtenidos. Uno de los elementos relevantes es la exposición del proceso de entrenamiento de los parámetros de un sigmoide que luego permitirá transformar las salidas a probabilidades, adoptando el método propuesto por \cite{Platt1999}.
+En los capítulos anteriores se revisó el funcionamiento tanto del proceso de extracción de características como del proceso de clasificación. El paso siguiente corresponde al proceso a través del cual se realizó la evaluación de la sensibilidad espacial. A continuación se muestra cada estapa del proceso de evaluación en general y los resultados obtenidos. Uno de los elementos relevantes es la exposición del proceso de entrenamiento de los parámetros de un sigmoide que luego permitirá transformar las salidas a probabilidades, adoptando el método propuesto por \cite{Platt1999}.
 
-\section{Metodología de evaluación}
+\section{Estapas del proceso de evaluación}
 \label{eval:metodologia}
 
-Para realizar la evaluación de la sensibilidad espacial se desarrolló un proceso en etapas que permitiera la obtención y recolección de los resultados que conforman las matrices de sensibilidad espacial, además de la posterior evaluación utilizando la métrica propuesta en el capítulo~\ref{cap:metricas}. Los  pasos definidos son lo siguientes.
+Para realizar la evaluación de la sensibilidad espacial se  etapas que permitiera la obtención y recolección de los resultados que conforman las matrices de sensibilidad espacial, además de la posterior evaluación utilizando la métrica propuesta en el capítulo~\ref{cap:metricas}. Los  pasos definidos son lo siguientes.
 
 \begin{itemize}
-\item Ajuste del set de datos. El set de datos INRIA trae por defecto conjuntos de prueba y entrenamiento en tamaño original y normalizado a 64x128px por lo que fue necesario escalar las imágenes para generar conjuntos de entrenamiento en otras escalas.
+\item Preprocesamiento de datos. El set de datos INRIA trae por defecto conjuntos de prueba y entrenamiento en tamaño original y normalizado a 64x128px por lo que fue necesario escalar las imágenes para generar conjuntos de entrenamiento en otras escalas.
 \item Extracción de características. Se realizó la extracción de características para las ocho escalas diferentes generando igual número de matrices de vectores de características.
 \item Entrenamiento de los clasificadores. Utilizó las matrices de características y los valores de las etiquetas de cada clase peatón y no-peatón.
 \item Entrenamiento del sigmoide. En conjunto con el entrenamiento de cada clasificador, se entrenó el sigmoide mencionado antes utilizando el método de \cite{Platt1999} con la mejora matemática realizada por \cite{Lin2000}
@@ -31,11 +31,11 @@ P(y=1|f)=\frac{1}{1+exp(Af+B)}
 
 Es importante conocer el proceso en detalle por lo que se analizará cada etapa por separados. Sin embargo, para el proceso de extracción de características y el de entrenamiento de los modelo sólo se mostrarán algunos elementos adicionales relevantes pues ya fueron explicados anteriormente en las secciones~\ref{caract:seleccion} y \ref{clasificadores:seleccion} respectivamente.
 
-\subsection{Ajuste del set de datos}
+\subsection{Preprocesamiento de datos}
 
 El contenido del set de datos INRIA incluye imágenes de peatones separadas en seis conjuntos de datos diferentes, ya que tanto el conjunto de imágenes con ejemplos positivos de la clase``peatón'' que corresponde al entrenamiento, como el que corresponde a pruebas se encuentran en dos escalas diferentes: la escala con tamaño original y una escala normalizada en 64x128px. Por otra parte el conjunto de la clase ``no-peatón'' se encuentra solo en tamaño original tanto para entrenamiento como para pruebas. 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.6]{images/ejanotacion}
   \caption{\em Ejemplo de anotaciones incluidas en el set de datos INRIA, incluyen el centro de la cabeza y una caja alrededor de la persona a cuerpo completo }  
@@ -44,17 +44,17 @@ El contenido del set de datos INRIA incluye imágenes de peatones separadas en s
 
 Parte importante del análisis, es la comparación en diferentes escalas, por lo que se hace necesario transformar tanto el conjunto de entrenamiento como el de test a las escalas utilizada en la comparación. Estas escalas son 32x64px, 64x128px (original normalizada), 128x256px, 256x512px. Para poder realizar esta tarea es necesario conocer de antemano la posición de la persona en la imagen, ya que es necesario centrar cada imagen en ella. En las anotaciones que vienen con set de datos (figura~\ref{fig:ejanotacion}) están incluidas las coordenadas de un rectángulo contenedor de cada persona. Para realizar este proceso se construyó un rutina en C++ que automatiza el proceso de lectura de las anotaciones y luego escala y recorta cada imagen generando un nuevo conjunto en cada uno de los tamaños antes indicados más un pequeño borde extra para evitar problemas con los bordes.
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.3]{images/32}
   \includegraphics[scale=.3]{images/64}
   \includegraphics[scale=.3]{images/128}
   \includegraphics[scale=.3]{images/256}
-  \caption{\em Imágenes  del set de datos escaladas a los tamaños utilizados, de izquierda a derecha 32x64px, 64x128px , 128x256px, 256x512px}  
+  \caption{\em Imágenes  del set de datos escaladas a los tamaños utilizados, de izquierda a derecha 32x64px, 64x128px, 128x256px, 256x512px}  
   \label{fig:imgescalas}
 \end{figure}
 
-A modo de ilustración de las diferencias de tamaño entre las imágenes realizamos un escalado proporcional que se puede apreciar en la figura~\ref{fig:imgescalas}.
+A modo de ilustración de las diferencias de tamaño entre las imágenes se expone un escalado proporcional que se puede apreciar en la figura~\ref{fig:imgescalas}.
 
 \subsection{Extracción de características}
 
@@ -64,7 +64,7 @@ El proceso extracción de características ya fue explicado anteriormente en la 
 
 Para realizar el entrenamiento de los modelos de los clasificadores se utilizó la matriz de vectores de características y además los valores de etiqueta de clase. En OpenCV se sugiere utilizar para el problema de clasificación binaria valores de etiqueta 1 y -1 los cuales fueron utilizados para indicar la pertenencia a la clase ``peatón'' y ``no-peatón'' respectivamente. 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.6]{images/modelo}
   \caption{\em Archivo ejemplo xml con el modelo de un clasificador SVM lineal }  
@@ -75,9 +75,9 @@ Como resultado del entrenamiento se obtiene un modelo del clasificador almacenad
 
 \subsection{Entrenamiento del sigmoide}
 
-Luego de entrenar los clasificadores es necesario realizar la normalización de las salidas de los clasificadores, para esto se utilizó un método propuesto por \cite{Platt1999}, quien indica que es posible transformar la salida de un clasificador SVM sin necesidad de utilizar un método de regularización de la máxima verosimilitud; el cual modificaría el entrenamiento del clasificador. El método planteado por Platt trata sobre el entrenamiento de los parámetros de un sigmoide adicional el cual a través de la ecuación~\ref{eq:sigmoid} transforma la salida del clasificador a probabilidades. El método de Platt es un método antiguo, pero tiene la ventaja de permitir su extensión directa a otro tipo de de clasificadores no SVM como en al caso de Adaboost \citep{Niculescu-mizil2005}, si modificaciones del algoritmo. 
+Luego de entrenar los clasificadores es necesario realizar la normalización de las salidas de los clasificadores, para esto se utilizó un método propuesto por \cite{Platt1999}, quien indica que es posible transformar la salida de un clasificador SVM sin necesidad de utilizar un método de regularización de la máxima verosimilitud; el cual modificaría el entrenamiento del clasificador. El método planteado por Platt trata sobre el entrenamiento de los parámetros de un sigmoide adicional el cual a través de la ecuación~\ref{eq:sigmoid} transforma la salida del clasificador a probabilidades. El método de Platt es un método antiguo, pero tiene la ventaja de permitir su extensión directa a otro tipo de clasificadores no SVM como en al caso de Adaboost \citep{Niculescu-mizil2005}, si modificaciones del algoritmo. 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.4]{images/svmsig}
   \includegraphics[scale=.4]{images/boostsig}
@@ -97,7 +97,7 @@ Una vez completadas todas las etapas de entrenamiento se utilizó un enfoque de 
 
 Las detecciones realizadas entregan como resultado una matriz con los valores de salida por cada imagen analizada. Los gráficos de estas matrices sin normalizar son como se muestran en la figura \ref{fig:rawoutput} 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.3]{images/svmrawoutput}
   \includegraphics[scale=.3]{images/boostrawoutput}
@@ -106,9 +106,9 @@ Las detecciones realizadas entregan como resultado una matriz con los valores de
 \end{figure}
 
 
-Los resultado obtenidos en esta etapa sin realizar la normalización no son muy buenos indicadores de sensibilidad espacial, ni tampoco son buenos resultados para realizar un post-procesamiento (la locacalización de peatones) de manera sencilla. Aparte del los gráficos obtenidos a partir de las matrices resultado (ver figura~\ref{fig:rawoutput}) se pueden observar la respuesta en la imagen para tener una idea de cómo es que se ve la detección sobre cada imagen. Un ejemplo de esto es la figura~\ref{fig:resultadoenimagen} en la cual se muestra el resultado en color sobre el peatón. Las detecciones con respuestas demasiado pequeñas o cero fueron eliminadas para ilustrar de mejor forma el fenómeno.
+Los resultado obtenidos en esta etapa sin realizar la normalización no son muy buenos indicadores de sensibilidad espacial, ni tampoco son buenos resultados para realizar un post-procesamiento (la localización de peatones) de manera sencilla. Aparte del los gráficos obtenidos a partir de las matrices resultado (ver figura~\ref{fig:rawoutput}) se pueden observar la respuesta en la imagen para tener una idea de cómo es que se ve la detección sobre cada imagen. Un ejemplo de esto es la figura~\ref{fig:resultadoenimagen} en la cual se muestra el resultado en color sobre el peatón. Las detecciones con respuestas demasiado pequeñas o cero fueron eliminadas para ilustrar de mejor forma el fenómeno.
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=1]{images/imgorig}
   \includegraphics[scale=1]{images/resultadosobreimagen}
@@ -121,7 +121,7 @@ Los resultado obtenidos en esta etapa sin realizar la normalización no son muy 
 
 Como ya se mencionó anteriormente, se realizó un proceso de normalización de la salida tanto para SVM como para Adaboost. En este punto a todos los valores de cada matriz resultado se le aplicó la ecuación~\ref{eq:sigmoid} obteniendo de cada una de ellas una matriz resultado normalizada que permite ahora comparar directamente entre Adaboost y SVM además de facilitar considerablemente la etapa de post-procesamiento. En otras palabras lo realizado fue mapear la salida de los clasificadores a probabilidades.
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.3]{images/svmoutput}
   \includegraphics[scale=.3]{images/boostoutput}
@@ -152,7 +152,7 @@ Los resultados gráficos en general fueron obtenidos utilizando el paquete GNU O
 
 El primer tipo de gráfico obtenido corresponde al gráfico sin procesar de la matriz resultado, eso es con los valores obtenidos directamente del SVM lineal o Adaboost sin pasar por el proceso de normalización, algunos ejemplos de esto ya fueron expuestos anteriormente en la figura~\ref{fig:rawoutput}, sin embargo, esos no son los únicos ejemplos ya que para cada imagen detectada  es posible obtener uno de estos gráficos por lo que en la figura~\ref{fig:rawex}, se podrá encontrar más ejemplos de estas gráficas en el anexo~\ref{cap:gre}.
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.1]{images/raw/1}
   \includegraphics[scale=.1]{images/raw/2}
@@ -165,7 +165,7 @@ El primer tipo de gráfico obtenido corresponde al gráfico sin procesar de la m
 Un segundo tipo de gráfico obtenidos son los gráficos de matriz resultado con la normalización aplicada, este tipo de gráficos son en general el siguiente paso respecto de los gráficos sin procesar son el resultado de mapear los valores de cada matriz en los valores obtenidos pos la función sigmoidal que permite la normalización. Ejemplos de estos gráficos al igual que con los anteriores ya fueron expuestos en la figura~\ref{fig:output}. Sin embargo, es importante mostrar algunos ejemplos diferentes en la figura~\ref{fig:sigex}. Es necesario mencionar que estos ejemplos corresponden directamente con los de la figura~\ref{fig:rawex} pues fueron obtenidos a partir de la mismas imágenes.
 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.1]{images/sig/1}
   \includegraphics[scale=.1]{images/sig/2}
@@ -177,7 +177,7 @@ Un segundo tipo de gráfico obtenidos son los gráficos de matriz resultado con 
 
 El último tipo de gráfico en tres dimensiones es el obtenido con el promedio de las matrices. Estos gráficos representan de mejor forma la detección general realizada por el clasificador a todo el conjunto de datos, analizando este tipo de gráficos es posible describir comportamientos generales que se pueden luego aplicar en otros contextos. En la figura~\ref{fig:soutput}~se puede observar ejemplos de estos gráficos que en el siguiente capítulo se analizarán en detalle.
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.16]{images/meansvmout32}
   \includegraphics[scale=.16]{images/meanboostout256}
@@ -186,15 +186,15 @@ El último tipo de gráfico en tres dimensiones es el obtenido con el promedio d
 \end{figure}
 
 
-Dado el tamaño de estos gráfico es muy difícil colocar indicaciones en los ejes que ayuden a su interpretación,  por lo que a continuación se explican sus significados, pero teniendo en cuenta que la interpretación de cada eje es la misma para todos los gráficos tridimensionales expuestos en este documento.
+Dado el tamaño de estos gráficos es muy difícil colocar indicaciones en los ejes que ayuden a su interpretación,  por lo que a continuación se explican sus significados, pero teniendo en cuenta que la interpretación de cada eje es la misma para todos los gráficos tridimensionales expuestos en este documento.
 
 \begin{itemize}
 \item Eje x. Es el que se observa en línea oblicua desde el centro hacia la derecha y representa las columnas de la imagen.
 \item Eje y. Es el que se observa en línea oblicua desde el centro hacia la izquierda y representa las filas de la imagen.
-\item Eje z.Es la elevación y representa la magnitud del valor de la detección.
+\item Eje z. Es la elevación y representa la magnitud del valor de la detección.
 \end{itemize}
 
-Otros resultados gráficos son aquellos obtenidos de la proyección de las matrices hacia su ejes. Un ejemplo de esos son los gráficos en la figura~\ref{fig:proyecciones} en el capítulo~\ref{cap:metricas}. Estos gráficos no entregan mayor información que los tridimensionales por lo que no son utilizados como herramienta comparativa. Sin embargo es posible encontrar ejemplos de estos gráficos en el anexo~\ref{cap:gre}.
+Otros resultados gráficos son aquellos obtenidos de la proyección de las matrices hacia sus ejes. Un ejemplo de esos son los gráficos en la figura~\ref{fig:proyecciones} en el capítulo~\ref{cap:metricas}. Estos gráficos no entregan mayor información que los tridimensionales por lo que no son utilizados como herramienta comparativa. Sin embargo es posible encontrar ejemplos de estos gráficos en el anexo~\ref{cap:gre}.
 
 \section{Implementación}
 
@@ -215,5 +215,5 @@ Existen otros elementos de la metodología XP que se cumplen inmediatamente en u
 \section{Conclusiones del capítulo}
 % ***SAV falte
 
-En este capítulo se ha descrito el proceso de evaluación de la sensibilidad espacial que se aplica a los clasificadores considerados, que consta de siete etapas, Ajuste del set de datos, esto es, adaptar las imágenes del set de datos original para que fueran utilizadas por los clasificadores en escalas distintas a la original. Extracción de características, las que generan matrices de vectores de características producto de la aplicación de HOG. Entrenamiento de los clasificadores, en base a las matrices de características y las etiquetas peatón / no peatón. Entrenamiento del sigmoide que permite normalizar las salidas de los clasificadores, transformándolas a probabilidades, utilizando el método de \cite{Platt1999}, con la mejora propuesta por \cite{Lin2000}. Detección en la vecindad, moviendo la ventana deslizante prácticamente píxel a píxel, con el fin de que el ejercicio de detección reflejara fielmente los resultados de cada clasificador en las vecindades de los objetos a detectar, y por ende, poder determinar con mayor precisión la sensibilidad espacial de cada uno de éstos. Mapeo a probabilidades, esto es, aplicar el sigmoide entrenado a las salidas de los clasificadores, transformando efectivamente sus salidas en probabilidades, obteniendo gráficos que permiten apreciar el grado de detección de cada clasificador con respecto al objeto y a su entorno, permitiendo el cálculo de la sensibilidad espacial, así como también su estimación visual en comparación al caso ideal. Cálculo de las métricas de sensibilidad espacial que permiten determinar qué clasificador es más sensible espacialmente con respecto a otro(s). 
+En este capítulo se ha descrito el proceso de evaluación de la sensibilidad espacial que se aplica a los clasificadores considerados, que consta de siete etapas, Ajuste del set de datos, esto es, adaptar las imágenes del set de datos original para que fueran utilizadas por los clasificadores en escalas distintas a la original. Extracción de características, las que generan matrices de vectores de características producto de la aplicación de HOG. Entrenamiento de los clasificadores utilizando las matrices de características y las etiquetas peatón / no peatón. Entrenamiento del sigmoide que permite normalizar las salidas de los clasificadores, transformándolas a probabilidades, utilizando el método de \cite{Platt1999}, con la mejora propuesta por \cite{Lin2000}. Detección en la vecindad, moviendo la ventana deslizante prácticamente píxel a píxel, con el fin de que el ejercicio de detección reflejara fielmente los resultados de cada clasificador en las vecindades de los objetos a detectar, y por ende, poder determinar con mayor precisión la sensibilidad espacial de cada uno de éstos. Mapeo a probabilidades, esto es, aplicar el sigmoide entrenado a las salidas de los clasificadores, transformando efectivamente sus salidas en probabilidades, obteniendo gráficos que permiten apreciar el grado de detección de cada clasificador con respecto al objeto y a su entorno, permitiendo el cálculo de la sensibilidad espacial, así como también su estimación visual en comparación al caso ideal. Cálculo de las métricas de sensibilidad espacial que permiten determinar qué clasificador es más sensible espacialmente con respecto a otro(s). 
 El proceso de evaluación permitió la generación de distintos gráficos que permitían apreciar los resultados generados por los clasificadores y la información referente a la sensibilidad espacial de cada uno de éstos. Este proceso fue implementado mediante \textit{Extreme Programming} aplicado a un equipo unipersonal, con la ayuda de los lenguajes C++ y Phyton, además de bibliotecas como OpenCV.

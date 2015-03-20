@@ -1,0 +1,97 @@
+\chapter{Diseño del experimento}
+\label{cap:experimento}
+
+El experimento propuesto consiste en la propuesta o adaptación de una métrica que permita caracterizar la sensibilidad espacial en la vecindad de un peatón y evaluar que esta permita realizar una comparación entre un algoritmo detector de peatones y otro. Es importante que la métrica permita determinar que detector es más sensiblemente espacial que otro. Para una mayor generalidad, es necesario evaluar cada algoritmo realizando una variación en la escala de las imágenes que contienen a los peatones a detectar.
+
+La métrica a utilizar debe ser además una métrica válida. En el caso de ser una adaptación de métricas o medidas utilizadas para otras fines que puedan ser adaptados al problema aquí tratado, la métrica debe estar validada por otros autores en la literatura. En el caso de la elaboración de una nueva métrica o medida esta debe cumplir con las definiciones y reglas que la validen como tal. En este último caso se expondrán las demostraciones correspondientes para cada caso según el tipo de métrica, indicador o medida que se elabore.
+
+Por otra parte es importante que dentro de la selección de algoritmos de detección de peatones los criterios sean atingentes al problema y tengan una base teórica suficiente para realizar su implementación.
+
+\section{Hipótesis}
+\label{experimento:hipotesis}
+
+Para validar la métrica de sensibilidad espacial como tal y puesto que no existe una métrica definida para este problema en particular, es necesario probar que esta cumple con los axiomas, reglas o validación previa que pueda ser referenciada de la literatura. Por otra parte es también necesario poner a prueba el cumplimiento del objetivo de la métrica. En esta caso el objetivo de su evaluación tiene relación con la posibilidad de utilizar la métrica como indicador comparativo de la sensibilidad espacial. 
+
+Además de utilizar una métrica o indicador valido es necesario realizar la detección de peatones sobre un conjunto de datos validado para el problema de la detección de peatones, en este caso el dataset utilizado es el \textit{INRIA person dataset} confeccionado y validado por \cite{dalal2006} para la detección de peatones. 
+
+Para la evaluación del funcionamiento de la métrica se utilizará el análisis ANOVA de dos vías de medidas repetidas. Este análisis permitirá comparar las medias de los conjuntos muestrales para determinar si es posible dicernir entre los resultados de un algoritmo detector y otro con resultados significativos. Por los puntos expuesto anteriormente se formula la siguiente hipótesis:
+
+``La métrica para la caracterización de la sensibilidad espacial en la vecindad del peatón permite la comparación de los resultados obtenidos en diferentes escalas por dos algoritmos detectores, entregando diferencias de medias estadísticamente significativas con una confianza del 95\%''
+
+\section{Definición de variables}
+
+Las variables necesarias para la construcción del experimento que son extraídas de la hipótesis son las siguientes.
+
+\begin{itemize}
+\item Variables independientes. Las variables independientes son dos, el algoritmo de detección de peatones y la escala.
+
+\item Variable dependiente. Valor de la métrica de sensibilidad espacial.
+\end{itemize}
+
+\section{Selección del diseño experimental}
+
+El experimento necesario para comprobar la hipótesis planteada corresponde a un proceso de clasificación en torno a la vecindad de cada peatón. El resultado obtenido de esto será evaluado utilizando la métrica de sensibilidad espacial. De esta forma el experimento consta de dos etapas.
+
+En la primera etapa se seleccionará los algoritmos de detección de peatones los cuales de forma genérica constan de dos partes: el descriptor y clasificador, esto es importante de mencionar pues su selección se realizará de forma separada. Luego serán analizados todos los elementos del \textit{ground truth} del set de datos INRIA por cada algoritmo, los que entregarán resultados de la clasificación.
+
+En la segunda etapa todos los resultados obtenidos serán evaluados utilizando la métrica de sensibilidad espacial propuesta. Los resultados obtenidos de esta evaluación se analizarán utilizando el análisis de varianza para probar la hipótesis.
+
+\section{Tamaño de la muestra}
+
+El set de datos INRIA consta de un total de 6121 imágenes divididas en grupos de, entrenamiento (positivo, con peatón y negativo, sin peatón),  pruebas (positivo y negativo) y ejemplos normalizados de entrenamiento y pruebas (solo positivos) como se indica en la tabla~\ref{tab:inria}.
+
+ \begin{table}[htc]
+ \centering
+  \caption{\em Cantidad de imaǵenes en el set de datos INRIA según tipo.}  
+  \label{tab:inria}
+\begin{tabular}{lcc|c|c|}
+\cline{2-5}
+\multicolumn{1}{l|}{}               & \multicolumn{1}{c|}{Postivo} & Negativo              & Normalizado (Solo positivas) & Totales \\ \hline
+\multicolumn{1}{|l|}{Entrenamiento} & \multicolumn{1}{c|}{614}     & 1218                  & 2416                         & 4248    \\ \hline
+\multicolumn{1}{|l|}{Pruebas}       & \multicolumn{1}{c|}{288}     & 453                   & 1132                         & 1873    \\ \hline
+                                    & \multicolumn{1}{l}{}         & \multicolumn{1}{l|}{} & \multicolumn{1}{r|}{Total}   & 6121    \\ \cline{4-5} 
+\end{tabular}
+\end{table}
+
+Para todas las imágenes positivas sin normalizar, tanto de entrenamiento como de pruebas, existen anotaciones para todos lol peatones. Un total de 902 anotaciones que ayudaron en el proceso para la normalización a diferentes escalas. En particular se extrajo una versión escalada del set original tanto para entrenamiento y pruebas, además se utilizaron 9120 ejemplos negativos extraídos de forma aleatoria de las imágenes negativas de entrenamiento. En la tabla~\ref{tab:useddataset} se puede observar la cantidad de imágenes obtenidas según tamaño de ventana de clasificación.
+
+\begin{table}[htc]
+\caption{\em Cantidad de imaǵenes en el set de datos utilizado según ventana de clasificación.}  
+  \label{tab:useddataset}
+  \resizebox{15cm}{!} {
+\begin{tabular}{lcc|c|c|}
+\hline
+\multicolumn{1}{|l|}{Ventana}   & \multicolumn{1}{c|}{Entrenamiento Positivos} & Entrenamiento Negativos & Pruebas (Solo positivos)   & Totales                    \\ \hline
+\multicolumn{1}{|l|}{32x64px}   & \multicolumn{1}{c|}{614}                     & -                       & 589                        & 1203                       \\ \hline
+\multicolumn{1}{|l|}{64x128px}  & \multicolumn{1}{c|}{614}                     & 9120                    & 589                        & 10323                      \\ \hline
+\multicolumn{1}{|l|}{128x256px} & \multicolumn{1}{c|}{614}                     & -                       & 589                        & 1203                       \\ \hline
+\multicolumn{1}{|l|}{256x512px} & \multicolumn{1}{c|}{614}                     & -                       & 589                        & 1203                       \\ \hline
+                                & \multicolumn{1}{l}{}                         & \multicolumn{1}{l|}{}   & \multicolumn{1}{r|}{Total} & \multicolumn{1}{l|}{13932} \\ \cline{4-5} 
+\end{tabular}}
+\end{table}
+ 
+ 
+Dado que la transformación de tamaño de los negativos para el entrenamiento se realiza de forma dinámica, se tomó ejemplos solo para el tamaño de clasificación sugerido por \cite{dalal2006}, 64x128px. Esto permite que todos los entrenamientos se realicen con los mismos negativos. En el caso de los positivos el parámetro invariante corresponde a la vecindad \ie se consideró una vecindad fija respecto del peatón (una razón vecindad/peatón) en su imagen original y luego se escaló dicha vecindad a los tamaños muchas veces mencionados.
+Para cada una de las imágenes de prueba (598) se obtuvo una matriz resultado de la detección. Como la detección se realizó por dos combinaciones de descriptor/clasificador se obtuvo un total del 4712 matrices. Finalmente estas matrices fueron normalizadas y evaluadas utilizando la métrica de sensibilidad especial, este proceso se explicara en detalle en el capítulo~\ref{cap:eval}
+
+%*** y? que se hizo con las matrices (solo a grandes rasgos y referir a la sección que corresponda) ***
+
+\section{Conclusiones del capítulo}
+
+El diseño del experimento es importante para la correcta validación de la hipótesis planteada. El diseño del experimento entrega lineamientos sobre la forma en que se llevará a cabo  y las herramientas utilizadas en el proceso de experimentación. En resumen en el diseño de este experimento quedan definidos:
+
+\begin{itemize}
+
+\item La hipótesis. ``La métrica para la caracterización de la sensibilidad espacial en la vecindad del peatón permite la comparación de los resultados obtenidos en diferentes escalas por dos algoritmos detectores, entregando diferencias de medias estadísticamente significativas con una confianza del 95\%''
+
+\item Variables dependiente e independientes. En esta caso las dependientes corresponde a los algoritmos y la escala mientras que la dependiente corresponde al valor numérico de la métrica.
+
+\item Selección del diseño. Aquí queda definido a grandes rasgos como se llevará a cabo el experimento. Mas detalle de esto se puede encontrar en los siguientes capítulos.
+
+\item Tamaño de la muestra. En este punto se caracteriza el set de datos INRIA y la cantidad de datos evaluados y obtenidos luego del proceso experimental.
+
+\end{itemize}
+
+En el capítulo~\ref{cap:metricas} a continuación se presenta el proceso de selección/elaboración de la métrica que se utilizará para evaluar la sensibilidad espacial.
+
+

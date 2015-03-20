@@ -36,41 +36,54 @@ El método tal como fue descrito por \cite{dalal2006} está basado en la evaluac
   \label{fig:hogscheme}
 \end{figure}
 
+\subsubsection{\textit{Scale-invariant feature transform} (SIFT)}
+
+SIFT es un algoritmo descriptor de características utilizado en visión por computador para detectar y describir características locales de una imagen, este algoritmo fue publicado por \cite{lowe1999object}. Los algoritmos que preceden a SIFT en general se basan en la detección de esquinas ya que de esta forma las características permanecen invariante a la rotación. El principal aporte de SIFT fue que las características además permanecen invariantes en el escalado por lo que permite realizar detecciones de objetos en tamaños diferentes.
+
+El algoritmo SIFT considera cinco etapas generales que se exponen a continuación brevemente:
+
+\begin{itemize}
+\item Detección de extremos. En esta etapa se aplica una diferencia Gaussianas en busca de máximos locales de la diferencia.
+\item Localización de puntos de interés. Utilizando una expansión de serie de Taylor se localiza cada punto de interés y descarta los puntos que tengan valores inferiores a un umbral determinado. Además utilizando una matriz hessiana calcula las curvaturas principales de manera que los autovalores de la matriz no difieran en mas un orden de magnitud, eliminando así los bordes.
+\item Asignación de orientación. Se calcula la magnitud y dirección del gradiente en los puntos vecinos al punto de interés generando un histograma, el punto con mayor magnitud determina la dirección del punto de interés.
+\item Descripción del punto de interés. En esta etapa para cada punto de interés se define una vecindad de 16x16px la cual se divide en sub-bloques de 4x4px generando para cada unos de ellos un histograma de orientaciones. Los valores obtenidos de los histogramas son concatenados constituyendo el descriptor del punto de interés.
+\item Correspondencia de puntos. Finalmente se realiza una búsqueda espacial de proximidad para relacionar los puntos de interés. Esto permite determinar que puntos de interés describen un mismo objeto. Para evitar el ruido que se pueda producir se calcula la razón entre las distancias de los dos putos mas cercanos y se filtra con un umbral determinado.
+\end{itemize}
+
 \subsubsection{\textit{Speeded Up Robust Features} (SURF)}
 
 SURF fue presentado por primera vez por \cite{Bay2006}, este tipo de extractor de características está inspirado en \textit{Scale-invariant feature transform} (SIFT) \citep{Lowe2004}, es un descriptor orientado a la búsqueda de puntos de interés, para realizar esto se realiza una replicación de la imagen en forma piramidal gaussiana o laplaciana con el fin de obtener un efecto borroso llamado \textit{scale-space}, el cual permite obtener puntos de interés que se logran mantener invariantes al variar su escala. 
 
 El principal aporte de SURF es que con el cambio de esquema realizado respecto de SIFT puede mejorar la velocidad de cómputo manteniendo en teoría la calidad de los puntos de interés. El cambio de esquema tiene relación principalmente con que el cálculo con gaussianas realizado en SIFT es reemplazado por aproximaciones cuadradas en SURF. Un ejemplo de los operadores utilizados se muestra en \ref{fig:gaussians}, lo que al realizar la convolución resulta mucho más rápido. Para la búsqueda de los puntos de interés se utiliza un detector de \textit{Binary Large Objects} (BLOB) basado en la matriz Hessiana nombrado \textit{Fast Hessian Detector}.
 
-\begin{figure}[hp]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.6]{images/gaussian}
   \caption{\em Ejemplos de la aproximación de los gaussianas (izquierda) en cuadrados (derecha), los valores grises son cero. Imagen obtenida de \cite{Bay2006} }  
   \label{fig:gaussians}
 \end{figure}
 
-Dentro de la documentación de MATLAB, es posible encontrar un ejemplo de funcionamiento de SURF que resulta clarificador para entender lo antes expuesto.
+Solo para entender mejor el proceso de SURF dentro de la documentación de MATLAB es posible encontrar un ejemplo de  funcionamiento de su funcionamiento (\ref{fig:surfbox}~y~\ref{fig:surfmatching}) el cual resulta muy claro para entender lo antes expuesto. En el ejemplo se muestra un algoritmo para encontrar un objeto especifico basado en puntos clave que se corresponden entre la imagen original y la de referencia (\ref{fig:surfmatching}).
 
-En el ejemplo se muestra un algoritmo para encontrar un objeto especifico basado en puntos clave que se corresponden entre la imagen original y la de referencia, los puntos clave son obtenidos utilizando la implementación en MATLAB del descriptor SURF.
-
-\begin{figure}[hp]
+\begin{figure}[H]
   \centering
   \includegraphics[scale=.4]{images/surfbox}
   \includegraphics[scale=.4]{images/surfedbox}
   \caption{\em En la imagen, a la izquierda se observa el objeto a detectar, a la derecha el resultado obtenido luego de utilizar el detector \textit{Fast Hessian Detector} como los mostrados en la fig~\ref{fig:gaussians}. Imágenes obtenidas de \cite{matlab2014} }   \label{fig:surfbox}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[scale=.4]{images/surfmatching}
-  \caption{\em En la imagen. Con los puntos de interés seleccionados se realiza el proceso de búsqueda o \textit{matching}. Imágenes obtenidas de \cite{matlab2014} }   \label{fig:surfmatching}
+  \caption{\em En la imagen. Con los puntos de interés seleccionados se realiza el proceso de búsqueda o \textit{matching}. Imágenes obtenidas de \cite{matlab2014} }   
+\label{fig:surfmatching}
 \end{figure}
 
 \subsubsection{\textit{Haar-like Features}}
 
-La extracción de características de este tipo está orientado a buscar en la imagen la presencia o ausencia de ciertas características en la imagen, como bordes o cambios de textura. En específico \textit{Haar-like Features} considera regiones rectangulares adyacentes en alguna parte de la imagen y calcula la diferencia entre las suma de de las intensidades de cada píxel.
+La extracción de características de este tipo está orientado a buscar en la imagen la presencia o ausencia de ciertas características en la imagen, como bordes o cambios de textura. En específico \textit{Haar-like Features} considera regiones rectangulares adyacentes en alguna parte de la imagen y calcula la diferencia entre las suma de las intensidades de cada píxel.
 
-\begin{figure}[hp]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.3]{images/haarlike}
   \caption{\em Ejemplos \textit{Haar-like Features}. Obtenido de \cite{Pavani2010} }  
@@ -95,7 +108,7 @@ Se mencionó al inicio de este capítulo (\ref{cap:caract}) y en la sección~\re
 \item Dado el grado de importancia conferido tiene respaldo para ser bueno como elemento para realizar pruebas.
 \end{itemize}
 
-Algunos de los aspectos negativo de esta elección es la poca variabilidad en cuanto a descriptores, sin embargo esta elección se realizó dada la prioridad otorgada a la evaluación en diferentes escalas, lo que será explicada más adelante.
+Algunos de los aspectos negativos de esta elección es la poca variabilidad en cuanto a descriptores, sin embargo esta elección se realizó dada la prioridad otorgada a la evaluación en diferentes escalas, lo que será explicada más adelante.
 
 \subsection{Proceso de extracción de características}
 \label{caract:extraccion}
@@ -112,9 +125,12 @@ Previo al proceso mismo de extracción de características fue necesario realiza
 \item Con el fin de analizar la variación de la sensibilidad espacial a diferentes escalas, la evaluación será realizada en cuatro escalas diferentes por lo que es necesario ampliar o reducir cada imagen según sea necesario. 
 \end{itemize}
 
-El proceso de extracción de características es directo, ya que la implementación utilizada de HOG se puede encontrar dentro de la biblioteca OpenCV y esta implementación posee la función \textit{getDescriptors} la cual recibe como entrada la imagen y entrega el valor del vector de características HOG estos vectores son recolectados en una matriz de características que luego será utilizada para el entrenamiento de los clasificadores.
+%***DQ El proceso de extracción de características es directo, ya que la implementación utilizada de HOG se puede encontrar dentro de la biblioteca OpenCV y esta implementación posee la función \textit{getDescriptors} la cual recibe como entrada la imagen y entrega el valor del vector de características HOG estos vectores son recolectados en una matriz de características que luego será utilizada para el entrenamiento de los clasificadores.
 
-\begin{figure}[hp]
+En la biblioteca de visión por computador OpenCV se encuentran implementados algunas técnicas de extracción de características entre estos se encuentra HOG, esta implementación fue realizada basándose en lo descrito en el trabajo de \cite{dalal2006}. Por estas razones no es necesario utilizar un implementación propia. Las funciones implementadas reciben como entrada la imagen y entregan como resultado el vector de características.
+
+
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.6]{images/train1}
   \includegraphics[scale=.6]{images/train2}
@@ -136,19 +152,19 @@ En la figura~\ref{fig:trainimgs} se observan ejemplos de las imágenes de conjun
 \section{Clasificadores}
 \label{sec:clasif}
  
-Una vez determinado cuál será el descriptor de características utilizado, el siguiente paso es determinar cuáles serán los clasificadores a utilizar. En esta sección se revisarán los clasificadores estudiados, la selección , el entrenamiento y el proceso de normalización de la salida.
+Una vez determinado cuál será el descriptor de características utilizado, el siguiente paso es determinar cuáles serán los clasificadores a utilizar. En esta sección se revisarán los clasificadores estudiados, la selección, el entrenamiento y el proceso de normalización de la salida.
 
 \subsection{Clasificadores estudiados}
 
 \subsubsection{SVM}
 \label{propuestas:svmlineal}
 
-La implementación utilizada del SVM lineal parte de la biblioteca OpenCV en su módulo de \textit{machine learning}. Esta implementación esta basada en la biblioteca LibSVM \citep{Chang2011}. Dentro del módulo antes mencionado no sólo es posible encontrar una implementación para SVM con un kernel lineal, sino que también para kernel polinomial, radial y sigmoidal.
-Para el entrenamiento del SVM se consideraron los parámetros por defecto que se pueden observar en la figura~\ref{fig:svmparams}. 
+La implementación utilizada del SVM lineal es parte de la biblioteca OpenCV en su módulo de \textit{machine learning}. Esta implementación esta basada en la biblioteca LibSVM \citep{Chang2011}. Dentro del módulo antes mencionado no sólo es posible encontrar una implementación para SVM con un kernel lineal, sino que también para kernel polinomial, radial y sigmoidal.
+Para el entrenamiento del SVM se consideraron los parámetros por defecto que se pueden observar en la figura~\ref{fig:svmparams}. Los parámetros de entrenamiento utilizados por defecto son una referencia a partir de lo descrito por \cite{dalal2006} quien a su vez indica que realizó el la búsqueda de los parámetros a partir de lo expuesto en \citep{joachims1999making}. 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
-  \includegraphics[scale=.6]{images/svmparams}
+  \includegraphics[scale=.5]{images/svmparams}
   \caption{\em Parámetros por defecto de SVM Lineal para la construcción de los diferentes modelos utilizados en el análisis. }  
   \label{fig:svmparams}
 \end{figure}
@@ -161,25 +177,29 @@ Los modelos utilizados del clasificador SVM lineal se construyeron utilizando lo
 Dentro del módulo de \textit{machine learning} de OpenCV es posible encontrar un sub módulo de \textit{boosting} en el cual hay algoritmos como Adaboost discreto y real, LogiBoost, y \textit{Gentle} Adaboost. Esta implementación es propia de OpenCV y está basada teóricamente en la propuestas de \cite{Hastie2005} y \cite{Friedman2000}.
 
 
-\begin{figure}[H]
+\begin{figure}[htc]
   \centering
   \includegraphics[scale=.6]{images/boostparams}
   \caption{\em Parámetros por defecto de Adaboost Real para la construcción de los diferentes modelos utilizados en el análisis.  }  
   \label{fig:boostparams}
 \end{figure}
 
-Al igual que para el SVM lineal se seleccionaron los parámetros por defecto, los que se pueden observar en la figura~\ref{fig:boostparams}; y se construyeron los modelos utilizando los mismos vectores de características (obtenidos con el algoritmo HOG) que se utilizaron para la construcción de los modelos de SVM lineal, con el fin de realizar una comparación.
+Al igual que para el SVM lineal se seleccionaron los parámetros por defecto, los que se pueden observar en la figura~\ref{fig:boostparams}. La selección de los parámetros fue también obtenida a partir de la literatura \citep{Zhu2006} ya que \cite{dalal2006} indica que es posible utilizar Adaboost como alternativa para realizar la clasificación. Los parámetros utilizados fueron ontenidos realizando el entrenamiento para el mismo conjuntos de datos, pero no para resolver el mismo problema por que esto podría incluir un sesgo en el estudio, esto se discutirá mas adelante.
+
+La construcción de los modelos se realizó utilizando los mismos vectores de características (obtenidos con el algoritmo HOG) que se utilizaron para la construcción de los modelos de SVM lineal, con el fin de evitar diferencias y realizar una mejor comparación.
 
 \section{Selección de clasificadores y entrenamiento}
 \label{clasificadores:seleccion}
 
-La selección de clasificadores fue en base a la investigación teórica sin embargo, es conveniente indicar cuáles son la principales razones de seleccionar éstos y no otro tipo de clasificadores. Por otra parte, el proceso de entrenamiento fue exclusivamente tomar procesos ya implementados de OpenCV e incorporarlos en el proceso general. Sin embargo, como será explicado con más detalle en el capítulo~\ref{cap:eval} se realizó otro proceso de entrenamiento relacionado con la función utilizada para normalizar la salidas de los clasificadores.
+La selección de clasificadores fue basándose en la investigación teórica sin embargo, es conveniente indicar cuáles son las principales razones de seleccionar éstos y no otro tipo de clasificadores. Por otra parte, el proceso de entrenamiento fue exclusivamente tomar procesos ya implementados de OpenCV e incorporarlos en el proceso general. Sin embargo, como será explicado con más detalle en el capítulo~\ref{cap:eval} se realizó otro proceso de entrenamiento relacionado con la función utilizada para normalizar la salidas de los clasificadores.
 % ***SAV la frase anterior es difícil de entender, podrías decir "como será explicado en más detalle en la sección xxx" ***DQ Revisado
 
 \subsection{Selección de los clasificadores}
 \label{subsect:seleccionclasif}
 
-Los clasificadores finalmente seleccionados fueron \textit{Linear SVM} y \textit{Real Adaboost}, desde el comienzo al buscar información sobre del problema de clasificación de personas, surgen como las herramientas de más mencionadas. Pero es \cite{dalal2006} quien, en concreto, indica que son las mejores alternativas para utilizar en conjunto con el descriptor HOG que el mismo plantea. Sin embargo, no es el primero es sugerir su utilización. Para el caso de SVM, como se mencionó anteriormente en la sección~\ref{preliminares:clasif}, el primero en proponer este tipo de clasificadores fue \cite{Papageorgiou2000}. La gran popularidad de SVM en general dentro de la investigación relacionada con \textit{machine learning} es muy alta, por lo que al trabajar con este tipo de algoritmos es posible encontrar gran cantidad de información y el impacto generado por una mejora también resulta mayor. Por el lado de Adaboost una de las primeras propuestas no fue directamente sobre el problema de detección de personas sino para detección de rostros \citep{viola2001}. Como SVM, Adaboost es muy popular dentro de los problemas de detección de personas. Para ser muy específico respecto de la amplia utilización de estos algoritmos en el \textit{review} realizado por \cite{dollar2012} fueron analizados dieciséis de los más relevantes clasificadores de personas publicados entre 2004 y 2010 dentro de los cuales siete usaban SVM lineal y siete Adaboost.
+Los clasificadores finalmente seleccionados fueron \textit{Linear SVM} y \textit{Real Adaboost}. Desde el comienzo al buscar información sobre del problema de clasificación de personas, surgen como las herramientas de más mencionadas. Pero es \cite{dalal2006} quien, en concreto, indica que son las mejores alternativas para utilizar en conjunto con el descriptor HOG que el mismo desarrolla y presenta en un trabajo anterior \citep{dalal2005}. El trabajo de Dalal motiva en parte el desarrollo de este trabajo, esto es dado que la sensibilidad espacial en la vecindad del peatón es un punto no tratado dentro de su trabajo.  
+
+Sin embargo, \cite{dalal2006} no es el primero es sugerir su utilización. Para el caso de SVM, como se mencionó anteriormente en la sección~\ref{preliminares:clasif}, el primero en proponer este tipo de clasificadores fue \cite{Papageorgiou2000}. La gran popularidad de SVM en general dentro de la investigación relacionada con \textit{machine learning} es muy alta, por lo que al trabajar con este tipo de algoritmos es posible encontrar gran cantidad de información y el impacto generado por una mejora también resulta mayor. Por el lado de Adaboost una de las primeras propuestas no fue directamente sobre el problema de detección de personas sino para detección de rostros \citep{viola2001}. Como SVM, Adaboost es muy popular dentro de los problemas de detección de personas. Para ser muy específico respecto de la amplia utilización de estos algoritmos en el \textit{review} realizado por \cite{dollar2012} fueron analizados dieciséis de los más relevantes clasificadores de personas publicados entre 2004 y 2010 dentro de los cuales siete usaban SVM lineal y siete Adaboost.
 
 A continuación se enumeran las razones de la elección de SVM lineal y luego las razones para la elección de Adaboost.
 
@@ -209,7 +229,7 @@ Una vez enumeradas las razones para su elección, el siguiente paso se refiere a
 \subsection{Entrenamiento de los modelos}
 
 % ***SAV: al comienzo de la memoria se introdujo la base de datos de INRIA? ***DQ Revisado
-Para el entrenamiento de los modelos se utilizaron los vectores de características obtenidos de la imágenes del conjunto de entrenamiento del set de datos INRIA. Estos vectores de características fueron acumulados en una matriz de características que es la que utiliza tanto SVM como Adaboost para realizar el entrenamiento. En la etapa de entrenamiento se generaron ocho modelos de clasificadores, cuatro correspondientes a SVM lineal y los otros cuatro correspondientes a Adaboost, esto por la diferencia en la escala mencionada en la sección~\ref{caract:extraccion} con el fin de verificar el comportamiento de la sensibilidad espacial en la variación de escalas.
+Para el entrenamiento de los modelos se utilizaron los vectores de características obtenidos de las imágenes del conjunto de entrenamiento del set de datos INRIA. Estos vectores de características fueron acumulados en una matriz de características que es la que utiliza tanto SVM como Adaboost para realizar el entrenamiento. En la etapa de entrenamiento se generaron ocho modelos de clasificadores, cuatro correspondientes a SVM lineal y los otros cuatro correspondientes a Adaboost, esto por la diferencia en la escala mencionada en la sección~\ref{caract:extraccion} con el fin de verificar el comportamiento de la sensibilidad espacial en la variación de escalas.
 
 % ***SAV porque con el mismo set de datos usados para entrenar y no con uno distinto? ***DQ revisado
 Una vez entrenado cada modelo fue necesario evaluarlos con el mismo set de datos utilizado para entrenar. Estos resultados fueron recolectados y utilizados para realizar el entrenamiento de los parámetros del sigmoide, todo esto tal como indica \cite{Platt1999} en su trabajo.  El objetivo del entrenamiento de este sigmode es normalizar la salida de los clasificadores, de manera que puedan ser expresadas como probabilidades, ya que los valores de salida sin procesar de cada clasificador no permiten una comparación directa. El entrenamiento del sigmoide de Platt y sus resultados serán explicados en el siguiente capítulo.

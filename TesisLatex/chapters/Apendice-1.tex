@@ -66,3 +66,72 @@ Para realizar la evaluación de sensibilidad espacial utilizar el si
 \begin{lstlisting}
 sh evaluate.sh <directorio con las matrices *.mat> <nombre del archivo de salida>
 \end{lstlisting}
+
+
+\section{Entradas y Salidas}
+
+
+A continuación se expone ejemplos de las entradas y salidas del programa.
+
+\subsection{Entradas}
+
+El archivo de entrada de imágenes positivas contiene una lista con las direcciones de cada imagen.
+
+\begin{lstlisting}
+INRIAPerson/train_crop_32x64/pos/crop_000010.png
+INRIAPerson/train_crop_32x64/pos/crop_000011.png
+INRIAPerson/train_crop_32x64/pos/crop_000603.png
+INRIAPerson/train_crop_32x64/pos/crop_000606.png
+INRIAPerson/train_crop_32x64/pos/crop_000607.png
+INRIAPerson/train_crop_32x64/pos/crop_000608.png
+INRIAPerson/train_crop_32x64/pos/crop001001.png
+INRIAPerson/train_crop_32x64/pos/crop001002.png
+INRIAPerson/train_crop_32x64/pos/crop001003.png
+INRIAPerson/train_crop_32x64/pos/crop001004.png
+...
+\end{lstlisting}
+
+
+Ocurre los mismo para las imágenes negativas que en el caso anterior.
+
+\begin{lstlisting}
+INRIAPerson/train_neg_64x128/neg/00000002a_10.png
+INRIAPerson/train_neg_64x128/neg/00000002a_1.png
+INRIAPerson/train_neg_64x128/neg/00000002a_2.png
+INRIAPerson/train_neg_64x128/neg/00000002a_3.png
+INRIAPerson/train_neg_64x128/neg/00000002a_4.png
+INRIAPerson/train_neg_64x128/neg/00000002a_5.png
+INRIAPerson/train_neg_64x128/neg/00000002a_6.png
+INRIAPerson/train_neg_64x128/neg/00000002a_7.png
+INRIAPerson/train_neg_64x128/neg/00000002a_8.png
+...
+\end{lstlisting}
+
+
+El archivo de imágenes de testeo posee la misma estructura que los archivos anteriores.
+
+\begin{lstlisting}
+INRIAPerson/test_crop_32x64/pos/crop_0000011.png
+INRIAPerson/test_crop_32x64/pos/crop_0000021.png
+INRIAPerson/test_crop_32x64/pos/crop_0000031.png
+INRIAPerson/test_crop_32x64/pos/crop_0000041.png
+INRIAPerson/test_crop_32x64/pos/crop_0000051.png
+INRIAPerson/test_crop_32x64/pos/crop_0000052.png
+INRIAPerson/test_crop_32x64/pos/crop_0000061.png
+INRIAPerson/test_crop_32x64/pos/crop_0000071.png
+INRIAPerson/test_crop_32x64/pos/crop_0000081.png
+INRIAPerson/test_crop_32x64/pos/crop_0000091.png
+INRIAPerson/test_crop_32x64/pos/crop_0000121.png
+...
+\end{lstlisting}
+
+\subsection{Salida}
+
+Los archivos de salida contienen la matriz resulta de las imágenes analizadas.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=.4]{images/salida}
+  \caption{\em Ejemplo de matriz resultado en el archivo de salida}     
+  \label{fig:salida}
+\end{figure}

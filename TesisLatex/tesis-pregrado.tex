@@ -17,11 +17,12 @@
 % ### Resumen e Indices ####
 \include{chapters/gracias}
 \include{chapters/dedicatoria}
+\paginaenblanco
 \include{chapters/abstract}
 \pagestyle{fancy}
-\fancyhead[L]{\slshape \leftmark}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO,RE]{\slshape \leftmark}
 \fancyhead[C]{}
-\fancyhead[R]{\thepage}
 \tableofcontents        %% Indice general
 \listoffigures          %% Indice de figuras
 \listoftables           %% Indice de tablas
@@ -31,13 +32,14 @@
 \mainmatter
 % ### Configuración del header ###
 \pagestyle{fancy}
-\fancyhead[L]{\slshape \leftmark}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO,RE]{\slshape \leftmark}
 \fancyhead[C]{}
-\fancyhead[R]{\thepage}
 \pagenumbering{arabic}
 % ### Capitulos de la tesis ###
 \include{chapters/1-intro}
 \include{chapters/2-preliminares}
+\include{chapters/2.1-experimento}
 \include{chapters/3-metricas}
 \include{chapters/4-caracteristicas}
 \include{chapters/5-evaluacion}
@@ -55,9 +57,10 @@
 \addappheadtotoc %agregar Apéndice al índice. Si no tiene apéndices COMENTAR o BORRAR
 % \noappendicestocpagenum %quitar número de páginas a los apéndices
 % ### ANEXOS ###
+\include{chapters/Apendice-4}% Glosario
 \include{chapters/Apendice-1}% Manuales de Usuario
 \include{chapters/Apendice-2}% Gapm
 \include{chapters/Apendice-3}% greasd
-\include{chapters/Apendice-4}% Glosario
+
 \end{document}
 %\\end
